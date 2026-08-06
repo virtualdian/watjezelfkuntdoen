@@ -21,7 +21,7 @@ const detailData = blips.map((b) => ({
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wat je zelf kunt doen — een duurzaamheidsradar van thuis</title>
+    <title>Wat je zelf kunt doen, een duurzaamheidsradar van thuis</title>
     <meta
       name="description"
       content={`${totaal} dingen die ik thuis doe om duurzamer te leven. Geen lijstje met tips, maar wat er echt in huis, in de tuin en op de rekening gebeurt.`}
@@ -54,7 +54,8 @@ const detailData = blips.map((b) => ({
             Bijna iedereen die ik spreek is radeloos. &ldquo;Wat ik doe maakt toch niets
             uit, wat kan ik nou helemaal zelf doen?&rdquo; Dit is mijn antwoord: {totaal} dingen
             die ik thuis daadwerkelijk doe. Geen lijstje met tips van internet, maar wat er
-            bij mij echt in de keuken, in de tuin en op de bankrekening gebeurt.
+            bij mij echt in de keuken, in de tuin en op de bankrekening gebeurt. Niet omdat
+            ik het allemaal goed doe, maar omdat ik hoop dat je er één ding uit meeneemt.
           </p>
           <p class="lead">
             En het gekke is: bijna niets ervan voelt als inleveren. Minder kopen betekent
@@ -71,7 +72,7 @@ const detailData = blips.map((b) => ({
       <section id="radar" class="radar-sectie">
         <div class="omhulsel">
           <p class="bovenlabel">De radar</p>
-          <h2>Acht thema&rsquo;s, vier jaarringen</h2>
+          <h2>Acht thema&rsquo;s, vier (jaar)ringen</h2>
           <p class="lead">
             In het midden staat wat je vandaag nog kunt doen: dat kost je niets. Hoe verder
             naar buiten, hoe meer het van je vraagt. De buitenste ring is de schors: waar ik
@@ -171,9 +172,16 @@ const detailData = blips.map((b) => ({
             <p class="bovenlabel">Over mij</p>
             <h2>Ik ben geen expert</h2>
             <p>
-              Ik ben Dian, en ik woon met mijn gezin in een doodgewoon huis in Nederland.
-              Alles op deze radar doe ik zelf, of heb ik zelf geprobeerd. Waar ik iets niet
-              doe, staat dat er ook bij — inclusief het feit dat ik heel af en toe vlieg.
+              Ik ben Dian, en ik woon met mijn gezin in een gewoon huis in Nederland. Alles
+              op deze radar doe ik zelf, of heb ik zelf geprobeerd. Waar ik iets niet doe,
+              staat dat er ook bij, inclusief het feit dat ik heel af en toe vlieg.
+            </p>
+            <p>
+              Dit is bedoeld om je te inspireren, niet om je de les te lezen. Het is
+              nadrukkelijk niet de enige waarheid en zeker niet het einde van het lijstje.
+              Ik weet vrij zeker dat ik een aantal dingen beter kan doen, en er staan vast
+              zaken tussen waar iemand anders een betere oplossing voor heeft gevonden. Ik
+              leer graag bij, dus weet je iets wat hier nog niet staat: laat het me weten.
             </p>
             <p>
               Deze site is een privéproject. Hij staat volledig los van mijn werkgever, is
@@ -210,7 +218,7 @@ const detailData = blips.map((b) => ({
 
     <footer class="voet">
       <div class="omhulsel">
-        <p>Wat je zelf kunt doen — een privéproject. Gemaakt met veel groen en weinig javascript.</p>
+        <p>Wat je zelf kunt doen. Een privéproject, gemaakt met veel groen en weinig javascript.</p>
       </div>
     </footer>
 
@@ -258,7 +266,7 @@ const detailData = blips.map((b) => ({
         if (d.waarom) {
           const meer = el('details', 'detail-waarom');
           meer.append(el('summary', null, 'Waarom dit uitmaakt'));
-          meer.append(el('p', null, d.waarom));
+          d.waarom.split('\n\n').forEach((alinea) => meer.append(el('p', null, alinea)));
           detail.append(meer);
         }
 

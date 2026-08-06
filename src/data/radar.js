@@ -65,7 +65,7 @@ export const items = [
     tekst:
       'De bio-industrie is verrot en de uitstoot is enorm. Je hoeft niet van de ene op de andere dag vegetariër te worden. Begin met minder.',
     waarom:
-      'Dit is waarschijnlijk de grootste knop die je in je eentje kunt omzetten, en tegelijk de meest beladen. Daarom geen preek en geen percentage dat ik niet hard kan maken: voor vlees is land, veevoer, water en mest nodig, en die keten is vele malen zwaarder dan die van wat er direct uit de grond komt. Eén dag per week minder is al iets. En het is een keuze die je drie keer per dag opnieuw mag maken, wat het meteen de meest oefenbare op deze hele radar maakt.',
+      'Dit is waarschijnlijk de grootste knop die je in je eentje kunt omzetten, en tegelijk de meest beladen. Daarom geen preek en geen percentage dat ik niet hard kan maken: voor vlees is land, veevoer, water en mest nodig, en die keten is vele malen zwaarder dan die van wat direct uit de grond komt. Een dier eet nu eenmaal jarenlang plantaardig voedsel voordat het zelf voedsel wordt, en het grootste deel van die energie gaat onderweg verloren.\n\nWat ik zelf het prettigst vind aan dit item: het is de enige op deze radar waar je geen aankoop, geen klus en geen abonnement voor nodig hebt. Je maakt de keuze gewoon opnieuw bij de volgende maaltijd. Eén dag per week minder is al iets, en niemand ziet het als je het een keer niet volhoudt.',
   },
   {
     segment: 'eten',
@@ -200,7 +200,7 @@ export const items = [
     tekst:
       'Eierdozen, pluis uit de droger of geschaafd hout, en oud kaarsvet. Drie dingen die je normaal weggooit, en samen zijn ze één bruikbaar nieuw product. Vet smelten, in de eierdoos gieten met het pluis erin, laten stollen, in stukjes knippen.',
     waarom:
-      'Dit is het kleinste item op de radar en tegelijk mijn favoriete. Niet omdat aanmaakblokjes de wereld redden, maar omdat het laat zien hoe restproducten werken: alle drie deze dingen zijn afval, tot je ze bij elkaar legt. Wie dat één keer zelf doet, gaat daarna anders naar zijn afvalbak kijken. En dat is het echte effect.',
+      'Dit is het kleinste item op de radar en tegelijk mijn favoriete. Niet omdat aanmaakblokjes de wereld redden, maar omdat het laat zien hoe restproducten werken: alle drie deze dingen zijn afval, tot je ze bij elkaar legt. De eierdoos is de vorm en het brandt, het pluis of het houtschaafsel vat vlam, en het kaarsvet zorgt dat het lang genoeg blijft branden om het hout mee te krijgen.\n\nWie dat één keer zelf doet, gaat daarna anders naar zijn afvalbak kijken. Dat is het echte effect: niet de blokjes, maar dat je begint te zien welke dingen bij elkaar horen. Praktisch: smelt het vet au bain-marie en niet rechtstreeks in de pan, en gebruik pluis van katoenen was, niet van polyester.',
   },
   {
     segment: 'huishouden',
@@ -296,6 +296,8 @@ export const items = [
     titel: 'Een stroomcontract dat écht groen is',
     tekst:
       'Ik zit bij Vandebron, Greenchoice is vergelijkbaar. Nederlandse wind en zon, in plaats van grijze stroom met een buitenlands certificaat eroverheen.',
+    waarom:
+      'Bijna elk energiebedrijf verkoopt tegenwoordig "groene stroom", en dat betekent lang niet altijd hetzelfde. Groen zijn gebeurt namelijk op papier: bij duurzame opwek horen certificaten, en die certificaten kun je los van de stroom zelf verhandelen. Een leverancier kan dus gewoon grijze stroom inkopen en er certificaten van bijvoorbeeld een oude Noorse waterkrachtcentrale bij kopen. Op je factuur staat dan honderd procent groen, terwijl er geen windmolen extra voor is gaan draaien.\n\nDat wordt weleens sjoemelstroom genoemd. Waar het je om te doen is, is stroom uit Nederlandse wind en zon, het liefst van een leverancier die zelf opwek inkoopt bij producenten die je kunt aanwijzen. Dan gaat jouw geld daadwerkelijk naar de opwek waar je voor betaalt. Je kunt dit bij je eigen leverancier gewoon navragen, en het antwoord is verrassend vaak ontwijkend.',
     links: [
       { tekst: 'Vandebron', url: 'https://www.vandebron.nl/' },
       { tekst: 'Greenchoice', url: 'https://www.greenchoice.nl/' },
@@ -331,6 +333,8 @@ export const items = [
     titel: 'Een warmtepomp',
     tekst:
       'Hybride of volledig, allebei helpt. Hoe beter je huis geïsoleerd is en hoe lager je aanvoertemperatuur, hoe meer je eruit haalt.',
+    waarom:
+      'De volgorde is hier belangrijker dan de aanschaf zelf, en daar gaat het vaak mis. Een warmtepomp haalt warmte van buiten naar binnen, en hoe kleiner het verschil tussen die twee temperaturen, hoe minder stroom dat kost. In een slecht geïsoleerd huis moet het water heet zijn om het warm te krijgen, en dan werkt zo\'n pomp precies in zijn zwaarste stand. Isoleer dus eerst, verlaag daarna je aanvoertemperatuur, en zet de pomp er als laatste in.\n\nDat is ook waarom vloerverwarming en warmtepompen zo vaak in één adem genoemd worden. Niet omdat vloerverwarming op zichzelf zuiniger is dan radiatoren, dat is een hardnekkig misverstand, maar omdat je met een groot oppervlak toe kunt met veel lager verwarmingswater. Datzelfde bereik je ook met grotere radiatoren, wat een stuk goedkoper is dan je vloer eruit slopen.',
   },
   {
     segment: 'energie',
@@ -374,7 +378,7 @@ export const items = [
     tekst:
       'Ik bestel bij Sprinklr. Koop je bespoten planten, dan nemen bijen en hommels die pesticiden gewoon mee terug naar hun nest.',
     waarom:
-      'Dit is het item waarvan de meeste mensen niet weten dat het bestaat. Je koopt een plant speciaal om iets te doen voor de bijen, en levert vervolgens gif af bij het nest. De plant is dan letterlijk een val. Bij biologische kwekerijen speelt dat niet.',
+      'Dit is het item waarvan de meeste mensen niet weten dat het bestaat. Je koopt een plant speciaal om iets te doen voor de bijen, en levert vervolgens gif af bij het nest. De plant is dan letterlijk een val: hij trekt precies de beestjes aan die je wilde helpen.\n\nHet venijnige zit hem in bestrijdingsmiddelen die door de hele plant worden opgenomen in plaats van erop te blijven liggen. Afspoelen helpt dan niet, en de stof zit ook in de nectar en het stuifmeel. Bij een biologische kwekerij speelt dat niet. Let bij het kopen op het SKAL-keurmerk, want "milieuvriendelijk" op een kaartje zegt op zichzelf niets.',
     links: [{ tekst: 'Sprinklr', url: 'https://sprinklr.co/' }],
   },
   {
@@ -424,6 +428,8 @@ export const items = [
     ring: 'investeer',
     titel: 'Koppel je regenpijp af van het riool',
     tekst: 'Regenwater hoort de grond in, niet de zuivering.',
+    waarom:
+      'In veel oudere wijken zit het regenwater in hetzelfde riool als het toiletwater. Bij een flinke bui kan de zuivering die hoeveelheid niet aan, en dan slaat het stelsel over: het teveel loopt ongezuiverd de sloot of de gracht in. Al dat schone water van jouw dak zorgt er dus voor dat er vuil water in het oppervlaktewater terechtkomt.\n\nDaar komt bij dat de grond eronder juist uitdroogt. Regenwater dat je laat wegstromen, komt niet meer in het grondwater terecht, terwijl dat precies is wat je in een droge zomer nodig hebt, voor je tuin én tegen verzakking van je huis. Een regenton, een grindkoffer of gewoon een pijp die op een verlaagd stukje tuin uitkomt lost dit al voor een groot deel op. Veel gemeenten geven er subsidie voor.',
   },
   {
     segment: 'tuin',
@@ -533,7 +539,7 @@ export const items = [
       'Minder kopen betekent meer sparen en sneller aflossen, en dat betekent uiteindelijk vrije tijd. Tijd is het meest schaarse goed dat je hebt. Dit is geen offer, dit is winst.',
     waarom:
       'Dit is wat mij betreft de kern van deze hele radar. Bijna alles hierboven wordt gebracht als iets wat je inlevert: minder vlees, minder vliegen, minder kopen. Maar de rekening klopt andersom. Elke aankoop die je niet doet, is geld dat je niet hoeft te verdienen, en dus tijd die je niet hoeft te werken. De meeste mensen ruilen hun uren in voor spullen die ze binnen een jaar niet meer zien staan. Dat is de duurste ruil die er bestaat.',
-    links: [{ tekst: 'Intentioneel leven — Ernst-Jan Pfauth', url: 'https://pfauth.com/intentioneel-leven/' }],
+    links: [{ tekst: 'Intentioneel leven, Ernst-Jan Pfauth', url: 'https://pfauth.com/intentioneel-leven/' }],
   },
   {
     segment: 'geld',
@@ -599,6 +605,8 @@ export const items = [
     titel: 'Compenseer lokaal, niet met een knopje',
     tekst:
       'Een vinkje bij het boeken is de makkelijke weg, en dan blijft het hangen. Steun liever een Nederlands voedselbos of ga naar een boomplantdag. Dan zie je waar het heen gaat.',
+    waarom:
+      'Mijn bezwaar tegen dat vinkje is niet dat bomen planten slecht is. Het is dat de compensatie op het moment van boeken al klaar is, terwijl de uitstoot van vandaag is en de opname van die boom over dertig jaar. En dat is nog los van de vraag of dat bos er over dertig jaar nog staat.\n\nHet grootste probleem is wat het met je hoofd doet. Zodra je hebt afgerekend, voelt de vlucht schuldenvrij, en daarmee verdwijnt precies de vraag die je jezelf zou moeten stellen: moest ik eigenlijk wel. Ga je in plaats daarvan zelf met een schep het land op, of steun je een voedselbos in je eigen omgeving, dan zie je hoe traag en hoe klein zo\'n hectare groeit. Dat maakt de vraag of je die volgende vlucht echt nodig hebt vanzelf een stuk scherper.',
   },
   {
     segment: 'vervoer',

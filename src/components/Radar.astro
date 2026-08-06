@@ -1,0 +1,276 @@
+---
+import { buildRadar, CX, CY, RADII, SIZE } from '../lib/layout.js';
+import { rings } from '../data/radar.js';
+
+const { blips, segmentVormen, nerven } = buildRadar();
+const ringFill = {
+  vandaag: 'var(--ring-1)',
+  vervang: 'var(--ring-2)',
+  investeer: 'var(--ring-3)',
+  laat: 'var(--ring-4)',
+};
+---
+
+<div class="radar-wrap">
+  <svg
+    class="radar"
+    viewBox={`0 0 ${SIZE} ${SIZE}`}
+    role="img"
+    aria-label="De radar: acht thema's als taartpunten, vier jaarringen van binnen naar buiten."
+  >
+    <defs>
+      <clipPath id="schijf">
+        <circle cx={CX} cy={CY} r={RADII[4]} />
+      </clipPath>
+      <radialGradient id="kern" cx="50%" cy="45%">
+        <stop offset="0%" stop-color="#33513C" />
+        <stop offset="100%" stop-color="#1B2E22" />
+      </radialGradient>
+    </defs>
+
+    {/* De ringen als vlakken, per segment zodat we ze los kunnen aanlichten */}
+    <g class="wiggen">
+      {segmentVormen.map((seg) =>
+        seg.wiggen.map((w) => (
+          <path
+            d={w.pad}
+            fill={ringFill[w.ringId]}
+            data-segment={seg.id}
+            data-ring={w.ringId}
+          />
+        ))
+      )}
+    </g>
+
+    {/* Houtnerf */}
+    <g clip-path="url(#schijf)" class="nerf">
+      {nerven.map((n) => (
+        <circle cx={CX} cy={CY} r={n.r} fill="none" stroke="#1B2E22" stroke-opacity={n.opacity} stroke-width="1" />
+      ))}
+    </g>
+
+    {/* Ringgrenzen */}
+    <g class="ringlijnen">
+      {RADII.map((r) => (
+        <circle cx={CX} cy={CY} r={r} fill="none" stroke="#1B2E22" stroke-opacity="0.28" stroke-width="1.5" />
+      ))}
+    </g>
+
+    {/* Segmentscheidingen, als de stralen in het hout */}
+    <g class="stralen">
+      {segmentVormen.map((seg) => (
+        <path d={seg.lijn} stroke="#1B2E22" stroke-opacity="0.22" stroke-width="1.5" fill="none" />
+      ))}
+    </g>
+
+    {/* De kern */}
+    <circle cx={CX} cy={CY} r={RADII[0]} fill="url(#kern)" />
+    <text class="kern-tekst" x={CX} y={CY - 22} text-anchor="middle">Wat je</text>
+    <text class="kern-tekst" x={CX} y={CY + 6} text-anchor="middle">zelf kunt</text>
+    <text class="kern-tekst" x={CX} y={CY + 34} text-anchor="middle">doen</text>
+    <text class="kern-sub" x={CX} y={CY + 70} text-anchor="middle">begin in het midden</text>
+
+    {/* Labels langs de buitenrand */}
+    <g class="seglabels">
+      {segmentVormen.map((seg) => (
+        <>
+          <path id={`pad-${seg.id}`} d={seg.labelPad} fill="none" />
+          <text>
+            <textPath href={`#pad-${seg.id}`} startOffset="50%" text-anchor="middle">
+              {seg.naam}
+            </textPath>
+          </text>
+        </>
+      ))}
+    </g>
+
+    {/* De blips */}
+    <g class="blips">
+      {blips.map((b) => (
+        <g
+          class="blip"
+          data-nr={b.nr}
+          data-ring={b.ring}
+          data-segment={b.segment}
+          tabindex="0"
+          role="button"
+          aria-label={`${b.nr}. ${b.titel}`}
+        >
+          <circle class="blip-raak" cx={b.x} cy={b.y} r="16" />
+          <circle class="blip-dot" cx={b.x} cy={b.y} r="11.5" />
+          <text class="blip-nr" x={b.x} y={b.y + 3.6} text-anchor="middle">{b.nr}</text>
+        </g>
+      ))}
+    </g>
+  </svg>
+
+  <div class="legenda" role="group" aria-label="Ringen">
+    {rings.map((r) => (
+      <button class="legenda-knop" data-ringfilter={r.id} type="button">
+        <span class={`staal staal-${r.id}`} aria-hidden="true"></span>
+        <span>
+          <strong>{r.naam}</strong>
+          <em>{r.uitleg}</em>
+        </span>
+      </button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .radar-wrap {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+    align-items: center;
+  }
+
+  @media (max-width: 860px) {
+    .radar-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .radar {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .kern-tekst {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    fill: var(--room);
+    letter-spacing: 0.01em;
+  }
+
+  .kern-sub {
+    font-size: 13px;
+    fill: var(--sage);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .seglabels text {
+    font-size: 15.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    fill: var(--bos);
+  }
+
+  .blip {
+    cursor: pointer;
+  }
+
+  .blip-raak {
+    fill: transparent;
+  }
+
+  .blip-dot {
+    fill: var(--bos);
+    stroke: var(--room);
+    stroke-width: 2;
+    transition: r 0.12s ease, fill 0.12s ease;
+  }
+
+  .blip[data-ring='laat'] .blip-dot {
+    fill: var(--room);
+    stroke: var(--schors-diep);
+  }
+
+  .blip-nr {
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--room);
+    pointer-events: none;
+  }
+
+  .blip[data-ring='laat'] .blip-nr {
+    fill: var(--schors-diep);
+  }
+
+  .blip:hover .blip-dot,
+  .blip:focus-visible .blip-dot,
+  .blip.actief .blip-dot {
+    fill: var(--amber);
+    stroke: var(--inkt);
+    r: 14;
+  }
+
+  .blip:hover .blip-nr,
+  .blip:focus-visible .blip-nr,
+  .blip.actief .blip-nr {
+    fill: var(--inkt);
+  }
+
+  .blip:focus {
+    outline: none;
+  }
+
+  .radar.gefilterd .blip:not(.zichtbaar) {
+    opacity: 0.16;
+  }
+
+  .radar.gefilterd .wiggen path:not([data-actief]) {
+    opacity: 0.4;
+  }
+
+  .legenda {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .legenda-knop {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    text-align: left;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 0.7rem 0.8rem;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .legenda-knop:hover,
+  .legenda-knop.aan {
+    background: var(--room);
+    border-color: rgba(27, 46, 34, 0.16);
+  }
+
+  .legenda-knop strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--inkt);
+  }
+
+  .legenda-knop em {
+    display: block;
+    font-style: normal;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--grijsgroen);
+    margin-top: 0.15rem;
+  }
+
+  .staal {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex: none;
+    margin-top: 2px;
+    border: 1px solid rgba(27, 46, 34, 0.25);
+  }
+
+  .staal-vandaag { background: var(--ring-1); }
+  .staal-vervang { background: var(--ring-2); }
+  .staal-investeer { background: var(--ring-3); }
+  .staal-laat { background: var(--ring-4); }
+</style>

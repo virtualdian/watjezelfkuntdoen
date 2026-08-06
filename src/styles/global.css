@@ -1,0 +1,117 @@
+:root {
+  --inkt: #16261c;
+  --bos: #26402f;
+  --bos-mid: #3e6b4a;
+  --blad: #6e9a5e;
+  --sage: #a9c098;
+  --grijsgroen: #5c6f60;
+
+  --ring-1: #eef4e4;
+  --ring-2: #dfe9cd;
+  --ring-3: #c6d9b0;
+  --ring-4: #bfae94;
+  --schors-diep: #5b4a35;
+
+  --room: #fbf9f3;
+  --room-diep: #f3efe4;
+  --wit: #ffffff;
+  --amber: #d3a03a;
+
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif;
+
+  --breed: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--wit);
+  color: var(--inkt);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6em;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+}
+
+h2 {
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+a {
+  color: var(--bos-mid);
+  text-underline-offset: 3px;
+}
+
+.omhulsel {
+  max-width: var(--breed);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.bovenlabel {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bos-mid);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--grijsgroen);
+  max-width: 34em;
+}
+
+.knop {
+  display: inline-block;
+  background: var(--amber);
+  color: var(--inkt);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(22, 38, 28, 0.15);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.knop:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(22, 38, 28, 0.16);
+}
+
+.knop-licht {
+  background: transparent;
+  border: 1px solid rgba(22, 38, 28, 0.28);
+}

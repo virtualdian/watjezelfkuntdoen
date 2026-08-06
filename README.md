@@ -2,7 +2,7 @@
 
 Een privé duurzaamheidsradar: wat wij thuis daadwerkelijk doen, wat we
 vervangen hebben, waar we een keer in geïnvesteerd hebben en wat we bewust
-laten staan. Bedoeld om mensen te inspireren die radeloos zijn of denken
+laten staan. Bedoeld om mensen te inspireren die zich machteloos voelen of denken
 "wat ik doe maakt toch niet uit".
 
 ## Uitgangspunten

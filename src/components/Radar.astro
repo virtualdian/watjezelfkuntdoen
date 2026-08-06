@@ -136,9 +136,18 @@ const ringFill = {
   /* Op een telefoon mag de schijf de volle breedte pakken: dat maakt de stippen
      meteen een stuk beter aan te tikken. */
   @media (max-width: 760px) {
-    .radar {
-      width: calc(100% + 3rem);
+    .radar-wrap {
       margin-left: -1.5rem;
+      margin-right: -1.5rem;
+    }
+
+    .radar {
+      width: 100%;
+      margin: 0;
+    }
+
+    .legenda {
+      padding: 0 1.5rem;
     }
   }
 

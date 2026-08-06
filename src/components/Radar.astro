@@ -106,10 +106,11 @@ const ringFill = {
 
   <div class="legenda" role="group" aria-label="Ringen">
     {rings.map((r) => (
-      <button class="legenda-knop" data-ringfilter={r.id} type="button">
+      <button class="legenda-knop" data-ringfilter={r.id} type="button" aria-pressed="false">
         <span class={`staal staal-${r.id}`} aria-hidden="true"></span>
         <span>
-          <strong>{r.naam}</strong>
+          <strong class="naam-lang">{r.naam}</strong>
+          <strong class="naam-kort">{r.kort}</strong>
           <em>{r.uitleg}</em>
         </span>
       </button>
@@ -128,6 +129,16 @@ const ringFill = {
   @media (max-width: 860px) {
     .radar-wrap {
       grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  /* Op een telefoon mag de schijf de volle breedte pakken: dat maakt de stippen
+     meteen een stuk beter aan te tikken. */
+  @media (max-width: 760px) {
+    .radar {
+      width: calc(100% + 3rem);
+      margin-left: -1.5rem;
     }
   }
 
@@ -251,6 +262,10 @@ const ringFill = {
     color: var(--inkt);
   }
 
+  .legenda-knop .naam-kort {
+    display: none;
+  }
+
   .legenda-knop em {
     display: block;
     font-style: normal;
@@ -273,4 +288,55 @@ const ringFill = {
   .staal-vervang { background: var(--ring-2); }
   .staal-investeer { background: var(--ring-3); }
   .staal-laat { background: var(--ring-4); }
+
+  /* Klein scherm: de legenda wordt een rij compacte knoppen onder de schijf,
+     zodat de uitleg niet meer tussen de radar en het detail in staat. */
+  @media (max-width: 760px) {
+    .legenda {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .legenda-knop {
+      flex: 1 1 calc(50% - 0.2rem);
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.7rem;
+      border-color: rgba(27, 46, 34, 0.16);
+      background: var(--room);
+    }
+
+    .legenda-knop .naam-lang {
+      display: none;
+    }
+
+    .legenda-knop .naam-kort {
+      display: block;
+    }
+
+    .legenda-knop.aan {
+      background: var(--bos);
+    }
+
+    .legenda-knop.aan strong {
+      color: var(--room);
+    }
+
+    .legenda-knop strong {
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .legenda-knop em {
+      display: none;
+    }
+
+    .staal {
+      width: 15px;
+      height: 15px;
+      margin-top: 0;
+    }
+  }
 </style>

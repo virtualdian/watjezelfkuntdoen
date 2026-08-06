@@ -115,3 +115,143 @@ a {
   background: transparent;
   border: 1px solid rgba(22, 38, 28, 0.28);
 }
+
+/* Detailpaneel. Deze regels staan bewust globaal en niet in de component:
+   de inhoud wordt door javascript opgebouwd, en die elementen krijgen geen
+   scope-attribuut van Astro mee. */
+.detail {
+  margin-top: 2rem;
+  background: var(--room);
+  border: 1px solid rgba(22, 38, 28, 0.12);
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  min-height: 150px;
+}
+
+.detail h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.detail-tekst {
+  margin: 0;
+  max-width: 52em;
+  color: var(--grijsgroen);
+}
+
+.detail-leeg {
+  margin: 0;
+  color: var(--grijsgroen);
+  font-style: italic;
+}
+
+.detail-kruimel {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bos-mid);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.detail-nr {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--bos);
+  color: var(--room);
+  font-size: 0.78rem;
+  letter-spacing: 0;
+}
+
+.detail-waarom {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(22, 38, 28, 0.12);
+  padding-top: 0.8rem;
+}
+
+.detail-waarom summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--bos-mid);
+}
+
+.detail-waarom p {
+  margin: 0.7rem 0 0;
+  max-width: 52em;
+  color: var(--grijsgroen);
+}
+
+.detail-links {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+}
+
+.detail-sluit {
+  display: none;
+  float: right;
+  background: none;
+  border: 1px solid rgba(22, 38, 28, 0.22);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  color: var(--grijsgroen);
+}
+
+/* Klein scherm: het detail wordt een paneel onderin, zodat je meteen ziet wat
+   je hebt aangetikt in plaats van ernaartoe te moeten scrollen. */
+@media (max-width: 760px) {
+  .detail {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    margin: 0;
+    border-radius: 16px 16px 0 0;
+    border-width: 1px 0 0;
+    box-shadow: 0 -10px 30px rgba(22, 38, 28, 0.18);
+    max-height: 72vh;
+    overflow-y: auto;
+    transform: translateY(102%);
+    transition: transform 0.22s ease;
+    min-height: 0;
+    padding: 1.1rem 1.2rem 1.6rem;
+  }
+
+  .detail.open {
+    transform: translateY(0);
+  }
+
+  .detail-leeg {
+    display: none;
+  }
+
+  .detail-sluit {
+    display: block;
+  }
+
+  .detail h3 {
+    font-size: 1.25rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .detail {
+    transition: none;
+  }
+}

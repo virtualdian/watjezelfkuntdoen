@@ -1,5 +1,11 @@
 // De inhoud van de radar. Eén bestand voor nu; als er straks per item een eigen
 // pagina met verhaal moet komen, splitsen we dit op in losse markdown-bestanden.
+//
+// Velden per item:
+//   segment, ring, titel, tekst  — verplicht
+//   waarom                       — optioneel, langere onderbouwing in het detail
+//   links                        — optioneel, [{ tekst, url }]
+//   bronNodig                    — optioneel, item wacht nog op onderbouwing
 
 export const rings = [
   {
@@ -25,10 +31,10 @@ export const rings = [
   },
   {
     id: 'laat',
-    naam: 'Laat staan',
-    kort: 'Laat staan',
+    naam: 'Neem afscheid van',
+    kort: 'Afscheid',
     uitleg:
-      'De schors. Wat wij bewust niet doen of niet kopen, en waarom.',
+      'De schors. Wat ik bewust niet meer doe of koop, en waarom.',
   },
 ];
 
@@ -58,6 +64,8 @@ export const items = [
     titel: 'Fors minder vlees',
     tekst:
       'De bio-industrie is verrot en de uitstoot is enorm. Je hoeft niet van de ene op de andere dag vegetariër te worden. Begin met minder.',
+    waarom:
+      'Dit is waarschijnlijk de grootste knop die je in je eentje kunt omzetten, en tegelijk de meest beladen. Daarom geen preek en geen percentage dat ik niet hard kan maken: voor vlees is land, veevoer, water en mest nodig, en die keten is vele malen zwaarder dan die van wat er direct uit de grond komt. Eén dag per week minder is al iets. En het is een keuze die je drie keer per dag opnieuw mag maken, wat het meteen de meest oefenbare op deze hele radar maakt.',
   },
   {
     segment: 'eten',
@@ -92,7 +100,9 @@ export const items = [
     ring: 'vervang',
     titel: 'Koop biologisch',
     tekst:
-      'Bij ons is alles in de koelkast biologisch. Niet omdat wij er persoonlijk gezonder van worden, maar omdat vraag het aanbod verandert. Meer vraag betekent meer boeren die de omslag durven maken.',
+      'Bij mij is alles in de koelkast biologisch. Niet omdat ik er persoonlijk gezonder van word, maar omdat vraag het aanbod verandert.',
+    waarom:
+      'Dit is het duidelijkste voorbeeld van waarom "wat ik doe maakt toch niets uit" niet klopt. Een boer die overweegt om te schakelen kijkt naar één ding: is er genoeg afzet? Elke kar met biologische boodschappen is een stem in die afweging. Je verandert er de wereld niet mee, maar je verandert wel wat er volgend seizoen gezaaid wordt. Dat is precies het soort effect dat je zelf nooit terugziet, en dat wel bestaat.',
   },
   {
     segment: 'eten',
@@ -106,7 +116,8 @@ export const items = [
     ring: 'vervang',
     titel: 'Een maaltijdbox die het wél snapt',
     tekst:
-      'Wij zitten bij Ekomenu, niet bij HelloFresh of Marley Spoon. Lokaal, biologisch, met de seizoenen mee. En precies afgemeten: vier avonden voor twee personen, en er gaat nooit iets weg.',
+      'Ik zit bij Ekomenu, niet bij HelloFresh. Lokaal, biologisch, met de seizoenen mee. En precies afgemeten: vier avonden voor twee personen, en er gaat nooit iets weg.',
+    links: [{ tekst: 'Ekomenu', url: 'https://www.ekomenu.nl/' }],
   },
   {
     segment: 'eten',
@@ -120,20 +131,23 @@ export const items = [
     ring: 'vervang',
     titel: 'Biologische en fairtrade koffie',
     tekst:
-      'Wij drinken Simon Lévelt, maar er zijn er meer. Koffie is het product waar je het vaakst per dag een keuze in maakt.',
+      'Ik drink Simon Lévelt, maar er zijn er meer. Koffie is het product waar je het vaakst per dag een keuze in maakt.',
+    links: [{ tekst: 'Simon Lévelt', url: 'https://www.simonlevelt.nl/' }],
   },
   {
     segment: 'eten',
     ring: 'vervang',
     titel: 'Biologische thee',
-    tekst: 'Clipper staat bij ons in de kast.',
+    tekst: 'Clipper staat bij mij in de kast.',
+    links: [{ tekst: 'Clipper', url: 'https://www.clipper-teas.com/' }],
   },
   {
     segment: 'eten',
     ring: 'vervang',
     titel: 'Maak je eigen havermelk',
     tekst:
-      'Wij doen dat met een Milky. Scheelt pakken, scheelt transport, en het smaakt beter dan je denkt.',
+      'Ik doe dat met een Milky. Scheelt pakken, scheelt transport, en het smaakt beter dan je denkt.',
+    links: [{ tekst: 'Milky Plant', url: 'https://milkyplant.com/' }],
   },
   {
     segment: 'eten',
@@ -177,19 +191,33 @@ export const items = [
     ring: 'vandaag',
     titel: 'Broodzakjes zijn pedaalemmerzakjes',
     tekst:
-      'Bij ons verdwijnen ze in de badkamer. Je hebt ze toch al in huis, dus waarom zou je er nieuwe bij kopen.',
+      'Bij mij verdwijnen ze in de badkamer. Je hebt ze toch al in huis, dus waarom zou je er nieuwe bij kopen.',
+  },
+  {
+    segment: 'huishouden',
+    ring: 'vandaag',
+    titel: 'Maak je eigen aanmaakblokjes',
+    tekst:
+      'Eierdozen, pluis uit de droger of geschaafd hout, en oud kaarsvet. Drie dingen die je normaal weggooit, en samen zijn ze één bruikbaar nieuw product. Vet smelten, in de eierdoos gieten met het pluis erin, laten stollen, in stukjes knippen.',
+    waarom:
+      'Dit is het kleinste item op de radar en tegelijk mijn favoriete. Niet omdat aanmaakblokjes de wereld redden, maar omdat het laat zien hoe restproducten werken: alle drie deze dingen zijn afval, tot je ze bij elkaar legt. Wie dat één keer zelf doet, gaat daarna anders naar zijn afvalbak kijken. En dat is het echte effect.',
   },
   {
     segment: 'huishouden',
     ring: 'vervang',
     titel: 'Vaatwasblokjes van everdrop',
     tekst: 'Zelfde vaat, minder troep.',
+    links: [{ tekst: 'everdrop', url: 'https://www.everdrop.nl/' }],
   },
   {
     segment: 'huishouden',
     ring: 'vervang',
     titel: 'Handzeep en afwasmiddel',
     tekst: 'Marcel’s Green Soap of Ecover. Overal te krijgen.',
+    links: [
+      { tekst: 'Marcel’s Green Soap', url: 'https://www.marcelsgreensoap.com/' },
+      { tekst: 'Ecover', url: 'https://www.ecover.com/' },
+    ],
   },
   {
     segment: 'huishouden',
@@ -215,7 +243,8 @@ export const items = [
     segment: 'huishouden',
     ring: 'vervang',
     titel: 'Wc-papier van bamboe',
-    tekst: 'Wij gebruiken The Good Roll. Bamboe groeit nu eenmaal wat sneller dan een boom.',
+    tekst: 'Ik gebruik The Good Roll. Bamboe groeit nu eenmaal wat sneller dan een boom.',
+    links: [{ tekst: 'The Good Roll', url: 'https://www.thegoodroll.com/' }],
   },
   {
     segment: 'huishouden',
@@ -236,7 +265,7 @@ export const items = [
     ring: 'investeer',
     titel: 'Wasbare luiers',
     tekst:
-      'Wij hebben de eerste zes maanden wasbare luiers gebruikt. Eerlijk: niet altijd een pretje. Maar het scheelt een berg.',
+      'Ik heb de eerste zes maanden wasbare luiers gebruikt. Eerlijk: niet altijd een pretje. Maar het scheelt een berg.',
   },
   {
     segment: 'huishouden',
@@ -266,7 +295,11 @@ export const items = [
     ring: 'vervang',
     titel: 'Een stroomcontract dat écht groen is',
     tekst:
-      'Wij zitten bij Vandebron, Greenchoice is vergelijkbaar. Nederlandse wind en zon, in plaats van grijze stroom met een buitenlands certificaat eroverheen.',
+      'Ik zit bij Vandebron, Greenchoice is vergelijkbaar. Nederlandse wind en zon, in plaats van grijze stroom met een buitenlands certificaat eroverheen.',
+    links: [
+      { tekst: 'Vandebron', url: 'https://www.vandebron.nl/' },
+      { tekst: 'Greenchoice', url: 'https://www.greenchoice.nl/' },
+    ],
   },
   {
     segment: 'energie',
@@ -339,7 +372,10 @@ export const items = [
     ring: 'vervang',
     titel: 'Koop biologische planten',
     tekst:
-      'Wij bestellen bij Sprinklr. Koop je bespoten planten, dan nemen bijen en hommels die pesticiden gewoon mee terug naar hun nest.',
+      'Ik bestel bij Sprinklr. Koop je bespoten planten, dan nemen bijen en hommels die pesticiden gewoon mee terug naar hun nest.',
+    waarom:
+      'Dit is het item waarvan de meeste mensen niet weten dat het bestaat. Je koopt een plant speciaal om iets te doen voor de bijen, en levert vervolgens gif af bij het nest. De plant is dan letterlijk een val. Bij biologische kwekerijen speelt dat niet.',
+    links: [{ tekst: 'Sprinklr', url: 'https://sprinklr.co/' }],
   },
   {
     segment: 'tuin',
@@ -347,6 +383,8 @@ export const items = [
     titel: 'Potgrond zonder turf',
     tekst:
       'Bijna niemand weet dit: voor turf wordt veen afgegraven. Koop biologische potgrond of biologische compost.',
+    waarom:
+      'Veen is een van de grootste koolstofvoorraden die er zijn, en het is duizenden jaren oud. Zodra het wordt afgegraven en droogvalt, komt die koolstof vrij. Je kunt het niet terugleggen: veen groeit ongeveer een millimeter per jaar. Dat je dat in een zak van een paar euro bij het tuincentrum meeneemt om er een bak stiefmoedjes in te zetten, is een van de gekkere dingen in dit rijtje.',
   },
   {
     segment: 'tuin',
@@ -365,7 +403,7 @@ export const items = [
     ring: 'investeer',
     titel: 'Een groen dak',
     tekst:
-      'Bij ons op het schuurtje en op de overkapping. Houdt water vast, koelt, en is beter voor de biodiversiteit. Drie dingen tegelijk.',
+      'Bij mij op het schuurtje en op de overkapping. Houdt water vast, koelt, en is beter voor de biodiversiteit. Drie dingen tegelijk.',
   },
   {
     segment: 'tuin',
@@ -408,7 +446,8 @@ export const items = [
     ring: 'vandaag',
     titel: 'Repareer je spullen',
     tekst:
-      'Wij hebben de robotstofzuiger en de wasmachine zelf gerepareerd. Je kunt echt veel meer repareren dan je denkt.',
+      'Ik heb de robotstofzuiger en de wasmachine zelf gerepareerd. Je kunt echt veel meer repareren dan je denkt. Kom je er niet uit, dan is er bijna overal een Repair Café.',
+    links: [{ tekst: 'Repair Café', url: 'https://www.repaircafe.org/' }],
   },
   {
     segment: 'spullen',
@@ -416,13 +455,16 @@ export const items = [
     titel: 'Doe minimaal vier jaar met je telefoon',
     tekst:
       'Bij elektronica zit de impact vooral in de productie, niet in het stroomverbruik. Langer gebruiken is dus verreweg het belangrijkst.',
+    waarom:
+      'Een telefoon kost het grootste deel van zijn voetafdruk voordat jij hem voor het eerst aanzet: mijnbouw, chips, transport. Wat hij daarna aan stroom gebruikt is klein in vergelijking. Elk jaar dat je hem langer gebruikt, verdeel je diezelfde productiekosten over meer tijd. Twee jaar langer doen met hetzelfde toestel is daarmee effectiever dan wat je aan het gebruik ervan kunt optimaliseren.',
   },
   {
     segment: 'spullen',
     ring: 'vandaag',
     titel: 'Acht nieuwe kledingstukken per jaar',
     tekst:
-      'Dat is wat wij met elkaar hebben afgesproken. De rest komt van Vinted of de tweedehandswinkel. Er is genoeg kleding voor de komende zes generaties.',
+      'Dat is wat ik met mijn gezin heb afgesproken. De rest komt van Vinted of de tweedehandswinkel. Er is genoeg kleding voor de komende zes generaties.',
+    links: [{ tekst: 'Vinted', url: 'https://www.vinted.nl/' }],
   },
   {
     segment: 'spullen',
@@ -442,7 +484,14 @@ export const items = [
     ring: 'vervang',
     titel: 'Servies van de kringloop',
     tekst:
-      'Onze borden en kopjes komen daarvandaan. Er is echt al genoeg van, dus waarom zou je het nieuw kopen.',
+      'Mijn borden en kopjes komen daarvandaan. Er is echt al genoeg van, dus waarom zou je het nieuw kopen.',
+  },
+  {
+    segment: 'spullen',
+    ring: 'vervang',
+    titel: 'Houten speelgoed',
+    tekst:
+      'Hout is een natuurproduct, gaat generaties mee en is aan het eind gewoon hout. Plastic speelgoed is meestal binnen een jaar stuk en daarna voor altijd afval.',
   },
   {
     segment: 'spullen',
@@ -454,7 +503,7 @@ export const items = [
   {
     segment: 'spullen',
     ring: 'laat',
-    titel: 'Temu, AliExpress en die hele hoek',
+    titel: 'Temu, AliExpress en dat soort goedkope troepsites',
     tekst:
       'Je unlockt daar punten door spelletjes te spelen zodat je nóg meer kunt kopen. We zijn koopziek geworden. Daar moeten we vanaf.',
   },
@@ -473,6 +522,7 @@ export const items = [
     titel: 'Weet wat er met je spaargeld gebeurt',
     tekst:
       'Je spaargeld staat niet stil op een plank. Het wordt belegd, en waarin dat gebeurt verschilt enorm per bank. De Eerlijke Bankwijzer laat het je zien.',
+    links: [{ tekst: 'Eerlijke Geldwijzer', url: 'https://eerlijkegeldwijzer.nl/' }],
     bronNodig: true,
   },
   {
@@ -481,12 +531,27 @@ export const items = [
     titel: 'Koop minder, en win tijd',
     tekst:
       'Minder kopen betekent meer sparen en sneller aflossen, en dat betekent uiteindelijk vrije tijd. Tijd is het meest schaarse goed dat je hebt. Dit is geen offer, dit is winst.',
+    waarom:
+      'Dit is wat mij betreft de kern van deze hele radar. Bijna alles hierboven wordt gebracht als iets wat je inlevert: minder vlees, minder vliegen, minder kopen. Maar de rekening klopt andersom. Elke aankoop die je niet doet, is geld dat je niet hoeft te verdienen, en dus tijd die je niet hoeft te werken. De meeste mensen ruilen hun uren in voor spullen die ze binnen een jaar niet meer zien staan. Dat is de duurste ruil die er bestaat.',
+    links: [{ tekst: 'Intentioneel leven — Ernst-Jan Pfauth', url: 'https://pfauth.com/intentioneel-leven/' }],
+  },
+  {
+    segment: 'geld',
+    ring: 'vandaag',
+    titel: 'Vraag subsidie aan',
+    tekst:
+      'Voor isolatie, een warmtepomp en zonneboilers is er de ISDE via RVO. En veel gemeenten hebben een eigen potje voor een groen dak, een regenton of het weghalen van tegels. Dat scheelt zomaar honderden euro’s, en bijna niemand kijkt het na.',
+    links: [{ tekst: 'ISDE bij RVO', url: 'https://www.rvo.nl/subsidies-financiering/isde' }],
   },
   {
     segment: 'geld',
     ring: 'vervang',
     titel: 'Stap over naar een duurzame bank',
     tekst: 'Triodos of ASN. Eén formulier, en het werkt door in alles wat de bank doet.',
+    links: [
+      { tekst: 'Triodos', url: 'https://www.triodos.nl/' },
+      { tekst: 'ASN Bank', url: 'https://www.asnbank.nl/' },
+    ],
   },
   {
     segment: 'geld',
@@ -500,13 +565,18 @@ export const items = [
     titel: 'Kies een duurzaam pensioenfonds',
     tekst:
       'Als je die keuze hebt tenminste. Je pensioenpot is waarschijnlijk het grootste bedrag dat er ooit namens jou belegd wordt.',
+    waarom:
+      'Hier zit een scheve verhouding waar bijna niemand bij stilstaat. Je kunt jaren zorgvuldig je wc-blokjes uitzoeken, terwijl er ondertussen tonnen aan pensioengeld namens jou belegd worden in dingen waar je nooit naar gekeken hebt. Eén brief of één telefoontje naar je pensioenfonds weegt in euro’s zwaarder dan alles wat je in je badkamer kunt veranderen. Dat is geen reden om die badkamer te laten zitten, wel een reden om hier een keer naar te kijken.',
   },
   {
     segment: 'geld',
     ring: 'vervang',
     titel: 'Kijk ook naar je verzekeraar',
     tekst:
-      'Ook je premie wordt belegd. De Eerlijke Verzekeringswijzer beoordeelt verzekeraars op klimaat, natuur, dierenwelzijn, mensenrechten en wapens. Achmea en a.s.r. staan bovenaan. Wij zitten zelf bij Univé, en dat kan dus beter.',
+      'Ook je premie wordt belegd. De Eerlijke Verzekeringswijzer beoordeelt verzekeraars op klimaat, natuur, dierenwelzijn, mensenrechten en wapens. Achmea en a.s.r. staan bovenaan. Ik zit zelf bij Univé, en dat kan dus beter.',
+    links: [
+      { tekst: 'Eerlijke Verzekeringswijzer', url: 'https://eerlijkegeldwijzer.nl/verzekeringswijzer/' },
+    ],
   },
 
   // ------------------------------------------------------------- vervoer
@@ -515,7 +585,7 @@ export const items = [
     ring: 'vandaag',
     titel: 'Fiets naar je werk',
     tekst:
-      'Ook als het geen klein stukje is. Bij ons is het tussen de acht en dertien kilometer, en dat gaat prima.',
+      'Ook als het geen klein stukje is. Bij mij is het tussen de acht en dertien kilometer, en dat gaat prima.',
   },
   {
     segment: 'vervoer',
@@ -547,16 +617,47 @@ export const items = [
     ring: 'laat',
     titel: 'Vliegen',
     tekst:
-      'Eerlijk is eerlijk: ook wij vliegen heel soms. De laatste keer is nu drie jaar geleden. Vraag jezelf echt af of het met het vliegtuig moet. Binnen vijfhonderd kilometer rond Amsterdam kun je bijna overal met de trein komen.',
+      'Eerlijk is eerlijk: ook ik vlieg heel soms. De laatste keer is nu drie jaar geleden. Vraag jezelf echt af of het met het vliegtuig moet. Binnen vijfhonderd kilometer rond Amsterdam kun je bijna overal met de trein komen.',
   },
 
   // -------------------------------------------------------------- buiten
   {
     segment: 'buiten',
     ring: 'vandaag',
+    titel: 'Doe vrijwilligerswerk',
+    tekst:
+      'De gemiddelde Nederlander zit ’s avonds naar een praatprogramma te kijken waar hij alleen maar ongelukkiger van wordt. Zet het uit en ga een avond iets doen waar iemand anders wat aan heeft. Je slaapt er beter van.',
+    waarom:
+      'Dit is het enige item op de radar dat niet gaat over minder verbruiken, maar over meer opleveren. Alle andere items maken je voetafdruk kleiner; deze maakt iets groter. En het werkt bovendien tegen precies het gevoel waar deze site over gaat: machteloosheid verdwijnt niet door nog een documentaire te kijken, maar door je handen vuil te maken tussen mensen die hetzelfde doen.',
+  },
+  {
+    segment: 'buiten',
+    ring: 'vandaag',
     titel: 'Ga helpen in een voedselbos',
     tekst:
-      'Gisteravond stonden we er nog met gieters. Vrijwilligerswerk is het enige wat direct meer oplevert dan je zelf verbruikt.',
+      'Gisteravond stond ik er nog met gieters. Vrijwilligerswerk is het enige wat direct meer oplevert dan je zelf verbruikt.',
+  },
+  {
+    segment: 'buiten',
+    ring: 'vandaag',
+    titel: 'Ruim je eigen buurt op',
+    tekst:
+      'Ik ben Supporter van Schoon. Zie ik afval liggen, dan raap ik het op. Ligt er te veel, dan meld ik het bij de gemeente. Het kost je tien seconden per keer.',
+    links: [
+      { tekst: 'Supporter van Schoon', url: 'https://www.supportervanschoon.nl/' },
+    ],
+  },
+  {
+    segment: 'buiten',
+    ring: 'vandaag',
+    titel: 'Lees erover',
+    tekst:
+      'Over klimaatverandering, over systeemverandering, en over hoe je zelf beter kunt leven. Drie die ik aanraad: Omarm de chaos van Jan Rotmans, Intentioneel leven van Ernst-Jan Pfauth, en De insectencrisis van Oliver Milman.',
+    links: [
+      { tekst: 'Jan Rotmans', url: 'https://www.janrotmans.nl/' },
+      { tekst: 'Intentioneel leven', url: 'https://pfauth.com/intentioneel-leven/' },
+      { tekst: 'De insectencrisis', url: 'https://www.atlascontact.nl/boek/de-insectencrisis/' },
+    ],
   },
   {
     segment: 'buiten',

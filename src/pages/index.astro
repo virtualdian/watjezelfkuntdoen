@@ -5,11 +5,12 @@ import { buildRadar } from '../lib/layout.js';
 import { rings } from '../data/radar.js';
 
 const { blips, perSegment, telling, totaal } = buildRadar();
-const ringNaam = Object.fromEntries(rings.map((r) => [r.id, r.kort]));
 const detailData = blips.map((b) => ({
   nr: b.nr,
   titel: b.titel,
   tekst: b.tekst,
+  waarom: b.waarom || null,
+  links: b.links || [],
   ring: b.ring,
   ringNaam: rings.find((r) => r.id === b.ring).naam,
   segment: perSegment.find((s) => s.id === b.segment).naam,
@@ -23,42 +24,42 @@ const detailData = blips.map((b) => ({
     <title>Wat je zelf kunt doen — een duurzaamheidsradar van thuis</title>
     <meta
       name="description"
-      content={`${totaal} dingen die wij thuis doen om duurzamer te leven. Geen lijstje met tips, maar wat er bij ons echt in huis, in de tuin en op de rekening gebeurt.`}
+      content={`${totaal} dingen die ik thuis doe om duurzamer te leven. Geen lijstje met tips, maar wat er echt in huis, in de tuin en op de rekening gebeurt.`}
     />
+    <meta name="theme-color" content="#26402f" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%2326402f'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23c6d9b0' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%23c6d9b0' stroke-width='2'/%3E%3C/svg%3E" />
   </head>
 
   <body>
     <header class="kop">
       <div class="omhulsel kop-binnen">
-        <a class="merk" href="/">
+        <a class="merk" href="#top">
           <span class="merk-ring" aria-hidden="true"></span>
           Wat je zelf kunt doen
         </a>
         <nav>
           <a href="#radar">De radar</a>
           <a href="#waarom">Maakt het uit?</a>
-          <a href="#over">Over ons</a>
+          <a href="#over">Over mij</a>
         </nav>
       </div>
     </header>
 
-    <main>
+    <main id="top">
       <section class="held">
-        <div class="held-schijf" aria-hidden="true"></div>
         <div class="omhulsel held-binnen">
           <p class="bovenlabel">Een privé duurzaamheidsradar</p>
           <h1>Het maakt<br />wél uit.</h1>
           <p class="lead">
-            Bijna iedereen die we spreken is radeloos. &ldquo;Wat ik doe maakt toch niets
-            uit, wat kan ik nou helemaal zelf doen?&rdquo; Dit is ons antwoord: {totaal} dingen
-            die wij thuis daadwerkelijk doen. Geen lijstje met tips van internet, maar
-            wat er bij ons echt in de keuken, in de tuin en op de bankrekening gebeurt.
+            Bijna iedereen die ik spreek is radeloos. &ldquo;Wat ik doe maakt toch niets
+            uit, wat kan ik nou helemaal zelf doen?&rdquo; Dit is mijn antwoord: {totaal} dingen
+            die ik thuis daadwerkelijk doe. Geen lijstje met tips van internet, maar wat er
+            bij mij echt in de keuken, in de tuin en op de bankrekening gebeurt.
           </p>
           <p class="lead">
             En het gekke is: bijna niets ervan voelt als inleveren. Minder kopen betekent
-            meer sparen, en meer sparen betekent uiteindelijk vrije tijd. Tijd is het
-            meest schaarse goed dat je hebt.
+            meer sparen en sneller aflossen, en dat betekent uiteindelijk vrije tijd. Tijd
+            is het meest schaarse goed dat je hebt.
           </p>
           <p class="held-knoppen">
             <a class="knop" href="#radar">Bekijk de radar</a>
@@ -73,16 +74,23 @@ const detailData = blips.map((b) => ({
           <h2>Acht thema&rsquo;s, vier jaarringen</h2>
           <p class="lead">
             In het midden staat wat je vandaag nog kunt doen: dat kost je niets. Hoe verder
-            naar buiten, hoe meer het van je vraagt. De buitenste ring is de schors: wat wij
-            bewust níét doen. Klik op een stip.
+            naar buiten, hoe meer het van je vraagt. De buitenste ring is de schors: waar ik
+            bewust afscheid van heb genomen. Tik op een stip, of blader door de lijst
+            eronder.
           </p>
+        </div>
 
-          <div class="radar-blok">
+        <div class="radar-blok">
+          <div class="omhulsel">
             <Radar />
           </div>
+        </div>
 
+        <div class="omhulsel">
           <div class="detail" id="detail" aria-live="polite">
-            <p class="detail-leeg">Klik op een stip in de radar, of op een item in de lijst hieronder.</p>
+            <p class="detail-leeg">
+              Tik op een stip in de radar, of op een item in de lijst hieronder.
+            </p>
           </div>
         </div>
       </section>
@@ -103,7 +111,7 @@ const detailData = blips.map((b) => ({
                         <li>
                           <button type="button" class="item-knop" data-nr={item.nr}>
                             <span class="item-nr">{item.nr}</span>
-                            {item.titel}
+                            <span>{item.titel}</span>
                           </button>
                         </li>
                       ))}
@@ -140,7 +148,7 @@ const detailData = blips.map((b) => ({
             <div>
               <p>
                 En dan het tweede stuk. Duurzaam leven wordt altijd gebracht als iets wat je
-                inlevert. Bij ons werkt het andersom. Minder kopen betekent meer sparen en
+                inlevert. Bij mij werkt het andersom. Minder kopen betekent meer sparen en
                 sneller aflossen. Zelf koken van je restjes is lekkerder. Je eigen tomaten
                 smaken beter. Fietsen naar je werk is de fijnste drie kwartier van de dag.
               </p>
@@ -160,24 +168,26 @@ const detailData = blips.map((b) => ({
       <section id="over" class="over">
         <div class="omhulsel over-binnen">
           <div>
-            <p class="bovenlabel">Over ons</p>
-            <h2>Wij zijn geen experts</h2>
+            <p class="bovenlabel">Over mij</p>
+            <h2>Ik ben geen expert</h2>
             <p>
-              Ik ben Dian, en wij wonen gewoon in een huis in Nederland. Alles op deze
-              radar doen we zelf, of hebben we zelf geprobeerd. Waar we iets niet doen,
-              staat dat er ook bij — inclusief het feit dat we heel af en toe vliegen.
+              Ik ben Dian, en ik woon met mijn gezin in een doodgewoon huis in Nederland.
+              Alles op deze radar doe ik zelf, of heb ik zelf geprobeerd. Waar ik iets niet
+              doe, staat dat er ook bij — inclusief het feit dat ik heel af en toe vlieg.
             </p>
             <p>
-              Deze site is een privéproject. Hij staat volledig los van onze werkgevers, is
-              op eigen tijd gemaakt en gebruikt geen materiaal van welke organisatie dan ook.
-              Er wordt niets aan verdiend en er staat geen advertentie op.
+              Deze site is een privéproject. Hij staat volledig los van mijn werkgever, is
+              op eigen tijd gemaakt en gebruikt geen materiaal van welke organisatie dan
+              ook. Er wordt niets aan verdiend en er staat geen advertentie op. De bedrijven
+              die ik noem betalen daar niet voor; het is gewoon wat er bij mij in de kast
+              staat.
             </p>
             <p>
               Mis je iets, of doe je thuis iets wat hier nog niet staat? De site is open
               source. Stuur gerust een pull request.
             </p>
             <p>
-              <a class="knop" href="#" data-koffie>Trakteer ons op een koffie</a>
+              <a class="knop" href="#" data-koffie>Trakteer me op een koffie</a>
             </p>
           </div>
           <aside class="colofon">
@@ -189,7 +199,7 @@ const detailData = blips.map((b) => ({
               ))}.
             </p>
             <p>
-              Waar we een getal of een bewering noemen, hoort daar een bron bij. Een paar
+              Waar ik een getal of een bewering noem, hoort daar een bron bij. Een paar
               items wachten nog op die onderbouwing en zijn daarom voorzichtig geformuleerd.
               Liever iets minder stellig dan iets wat niet klopt.
             </p>
@@ -213,21 +223,68 @@ const detailData = blips.map((b) => ({
       const svg = document.querySelector('.radar');
       const blips = [...document.querySelectorAll('.blip')];
       const itemKnoppen = [...document.querySelectorAll('.item-knop')];
+      const smal = () => window.matchMedia('(max-width: 760px)').matches;
+
+      function el(tag, klasse, tekst) {
+        const n = document.createElement(tag);
+        if (klasse) n.className = klasse;
+        if (tekst) n.textContent = tekst;
+        return n;
+      }
 
       function toon(nr) {
         const d = perNr.get(String(nr));
         if (!d) return;
-        detail.innerHTML = `
-          <p class="detail-kruimel"><span class="detail-nr">${d.nr}</span> ${d.segment} · ${d.ringNaam}</p>
-          <h3>${d.titel}</h3>
-          <p class="detail-tekst">${d.tekst}</p>`;
+
+        detail.textContent = '';
+
+        const sluit = el('button', 'detail-sluit', 'Sluiten');
+        sluit.type = 'button';
+        sluit.addEventListener('click', () => {
+          detail.classList.remove('open');
+          blips.forEach((b) => b.classList.remove('actief'));
+          itemKnoppen.forEach((k) => k.classList.remove('actief'));
+        });
+        detail.append(sluit);
+
+        const kruimel = el('p', 'detail-kruimel');
+        kruimel.append(el('span', 'detail-nr', String(d.nr)));
+        kruimel.append(el('span', null, `${d.segment} · ${d.ringNaam}`));
+        detail.append(kruimel);
+
+        detail.append(el('h3', null, d.titel));
+        detail.append(el('p', 'detail-tekst', d.tekst));
+
+        if (d.waarom) {
+          const meer = el('details', 'detail-waarom');
+          meer.append(el('summary', null, 'Waarom dit uitmaakt'));
+          meer.append(el('p', null, d.waarom));
+          detail.append(meer);
+        }
+
+        if (d.links.length) {
+          const rij = el('p', 'detail-links');
+          d.links.forEach((l, i) => {
+            if (i > 0) rij.append(document.createTextNode(' · '));
+            const a = el('a', null, l.tekst);
+            a.href = l.url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            rij.append(a);
+          });
+          detail.append(rij);
+        }
+
+        detail.classList.add('open');
         blips.forEach((b) => b.classList.toggle('actief', b.dataset.nr === String(nr)));
         itemKnoppen.forEach((k) => k.classList.toggle('actief', k.dataset.nr === String(nr)));
       }
 
       blips.forEach((b) => {
         b.addEventListener('click', () => toon(b.dataset.nr));
-        b.addEventListener('mouseenter', () => toon(b.dataset.nr));
+        b.addEventListener('mouseenter', () => {
+          if (!smal()) toon(b.dataset.nr);
+        });
         b.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -240,7 +297,9 @@ const detailData = blips.map((b) => ({
       itemKnoppen.forEach((k) => {
         k.addEventListener('click', () => {
           toon(k.dataset.nr);
-          document.getElementById('radar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (!smal()) {
+            document.getElementById('radar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         });
       });
 
@@ -251,9 +310,11 @@ const detailData = blips.map((b) => ({
           const ring = knop.dataset.ringfilter;
           filter = filter === ring ? null : ring;
           svg.classList.toggle('gefilterd', filter !== null);
-          document.querySelectorAll('[data-ringfilter]').forEach((k) =>
-            k.classList.toggle('aan', k.dataset.ringfilter === filter)
-          );
+          document.querySelectorAll('[data-ringfilter]').forEach((k) => {
+            const aan = k.dataset.ringfilter === filter;
+            k.classList.toggle('aan', aan);
+            k.setAttribute('aria-pressed', String(aan));
+          });
           blips.forEach((b) =>
             b.classList.toggle('zichtbaar', filter === null || b.dataset.ring === filter)
           );
@@ -276,7 +337,7 @@ const detailData = blips.map((b) => ({
         background: var(--wit);
         position: sticky;
         top: 0;
-        z-index: 10;
+        z-index: 30;
       }
 
       .kop-binnen {
@@ -302,6 +363,7 @@ const detailData = blips.map((b) => ({
       .merk-ring {
         width: 22px;
         height: 22px;
+        flex: none;
         border-radius: 50%;
         background: radial-gradient(
           circle,
@@ -328,49 +390,38 @@ const detailData = blips.map((b) => ({
         color: var(--inkt);
       }
 
-      .held {
-        background: var(--room);
-        padding: clamp(3.5rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
-        border-bottom: 1px solid rgba(22, 38, 28, 0.08);
-        position: relative;
-        overflow: hidden;
-      }
+      @media (max-width: 640px) {
+        .kop-binnen {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
 
-      /* De boomschijf die half buiten beeld valt. Puur decoratie. */
-      .held-schijf {
-        position: absolute;
-        right: -18%;
-        top: 50%;
-        transform: translateY(-50%);
-        width: min(40vw, 560px);
-        aspect-ratio: 1;
-        border-radius: 50%;
-        border: 16px solid var(--schors-diep);
-        background:
-          repeating-radial-gradient(
-            circle at 47% 46%,
-            rgba(22, 38, 28, 0.5) 0 2px,
-            transparent 2px 11px
-          ),
-          repeating-radial-gradient(
-            circle at 47% 46%,
-            rgba(22, 38, 28, 0.16) 0 1px,
-            transparent 1px 4px
-          ),
-          radial-gradient(circle at 47% 46%, #4d7350 0%, #7c9d6d 45%, #b3c9a1 100%);
-        opacity: 0.85;
-      }
+        .merk {
+          font-size: 1rem;
+        }
 
-      @media (max-width: 1100px) {
-        .held-schijf {
-          display: none;
+        .kop nav {
+          gap: 0.4rem;
+          font-size: 0.85rem;
+          margin-left: -0.6rem;
+        }
+
+        /* Ruimere aanraakvlakken op een telefoon */
+        .kop nav a {
+          display: block;
+          padding: 0.45rem 0.6rem;
         }
       }
 
+      .held {
+        background: var(--room);
+        padding: clamp(2.5rem, 8vw, 7rem) 0 clamp(2.5rem, 6vw, 5rem);
+        border-bottom: 1px solid rgba(22, 38, 28, 0.08);
+      }
+
       .held-binnen {
-        max-width: 760px;
-        position: relative;
-        z-index: 1;
+        max-width: 900px;
       }
 
       .held h1 {
@@ -385,68 +436,18 @@ const detailData = blips.map((b) => ({
       }
 
       .radar-sectie {
-        padding: clamp(3rem, 7vw, 5.5rem) 0;
+        padding: clamp(2.5rem, 7vw, 5.5rem) 0;
       }
 
       .radar-blok {
         margin: 2.5rem 0 0;
       }
 
-      .detail {
-        margin-top: 2rem;
-        background: var(--room);
-        border: 1px solid rgba(22, 38, 28, 0.12);
-        border-radius: 14px;
-        padding: 1.4rem 1.6rem;
-        min-height: 150px;
-      }
-
-      .detail h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.4rem;
-      }
-
-      .detail-tekst {
-        margin: 0;
-        max-width: 52em;
-        color: var(--grijsgroen);
-      }
-
-      .detail-leeg {
-        margin: 0;
-        color: var(--grijsgroen);
-        font-style: italic;
-      }
-
-      .detail-kruimel {
-        font-size: 0.78rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--bos-mid);
-        font-weight: 600;
-        margin-bottom: 0.6rem;
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-      }
-
-      .detail-nr {
-        display: inline-grid;
-        place-items: center;
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: var(--bos);
-        color: var(--room);
-        font-size: 0.78rem;
-        letter-spacing: 0;
-      }
-
       .lijst-sectie {
         background: var(--room);
         border-top: 1px solid rgba(22, 38, 28, 0.08);
         border-bottom: 1px solid rgba(22, 38, 28, 0.08);
-        padding: clamp(3rem, 7vw, 5.5rem) 0;
+        padding: clamp(2.5rem, 7vw, 5.5rem) 0;
       }
 
       .kolommen {
@@ -504,7 +505,7 @@ const detailData = blips.map((b) => ({
         background: none;
         border: 0;
         border-radius: 8px;
-        padding: 0.35rem 0.4rem;
+        padding: 0.5rem 0.4rem;
         font: inherit;
         font-size: 0.95rem;
         line-height: 1.4;
@@ -526,13 +527,12 @@ const detailData = blips.map((b) => ({
       }
 
       .waarom {
-        padding: clamp(3.5rem, 8vw, 6rem) 0;
+        padding: clamp(3rem, 8vw, 6rem) 0;
         background: var(--bos);
         color: var(--room);
       }
 
-      .waarom h2,
-      .waarom .bovenlabel {
+      .waarom h2 {
         color: var(--room);
       }
 
@@ -567,7 +567,7 @@ const detailData = blips.map((b) => ({
       }
 
       .over {
-        padding: clamp(3.5rem, 8vw, 6rem) 0;
+        padding: clamp(3rem, 8vw, 6rem) 0;
       }
 
       .over-binnen {
@@ -580,6 +580,7 @@ const detailData = blips.map((b) => ({
       @media (max-width: 820px) {
         .over-binnen {
           grid-template-columns: 1fr;
+          gap: 2rem;
         }
       }
 

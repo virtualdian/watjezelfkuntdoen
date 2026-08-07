@@ -221,6 +221,29 @@ export const items = [
   },
   {
     segment: 'huishouden',
+    ring: 'vandaag',
+    titel: 'Was op 30 graden',
+    tekst:
+      'Je was wordt er net zo schoon van. Het grootste deel van de energie van een wasmachine gaat niet naar draaien, maar naar het opwarmen van het water.',
+  },
+  {
+    segment: 'huishouden',
+    ring: 'vandaag',
+    titel: 'De droger alleen voor handdoeken',
+    tekst:
+      'De rest hangt gewoon aan een rek. Een droger is een van de grootste stroomvreters in huis, en de lucht buiten is gratis.',
+  },
+  {
+    segment: 'huishouden',
+    ring: 'vandaag',
+    titel: 'Hergebruik het water uit je droger',
+    tekst:
+      'Er zit geen kalk in, dus je planten zijn er blij mee en je strijkijzer hoef je nooit meer te ontkalken. Twee keer gratis, uit een bakje dat de meeste mensen in de gootsteen kieperen.',
+    waarom:
+      'Condenswater uit een droger is zacht water: het is verdampt en weer neergeslagen, dus de kalk blijft achter. Precies daarom is het ideaal voor een strijkijzer, waar kalkaanslag normaal het probleem is.\n\nEén eerlijke kanttekening: helemaal schoon is het niet. Er komen vezels en restjes wasmiddel in mee. Voor je kamerplanten, de border en het strijkijzer is dat geen enkel bezwaar. Ik zou het alleen niet over eetbare planten gieten, dan pak ik gewoon de regenton.',
+  },
+  {
+    segment: 'huishouden',
     ring: 'vervang',
     titel: 'Tandpasta op houtskoolbasis',
     tekst:
@@ -458,6 +481,22 @@ export const items = [
   {
     segment: 'spullen',
     ring: 'vandaag',
+    titel: 'Ga naar de bibliotheek',
+    tekst:
+      'Een boek dat je één keer leest hoef je niet te bezitten. Voor een paar tientjes per jaar heb je de hele collectie, inclusief de tijdschriften waar je anders een abonnement op zou nemen.',
+  },
+  {
+    segment: 'spullen',
+    ring: 'vandaag',
+    titel: 'Vraag herinneringen in plaats van cadeaus',
+    tekst:
+      'Met verjaardagen en feestdagen vraag ik geen spullen meer, maar iets om samen te doen. Dat is het enige cadeau waar je een jaar later nog iets aan hebt.',
+    waarom:
+      'Feestdagen en verjaardagen zijn de momenten waarop de meeste onnodige spullen een huis binnenkomen. Niet omdat iemand ze nodig heeft, maar omdat er iets gegeven moest worden. Een groot deel daarvan staat binnen een jaar in de kast of op Marktplaats.\n\nHet ongemakkelijke is dat je het moet uitspreken, want anders koopt iedereen gewoon door. Zeg het gerust ruim van tevoren. In mijn ervaring zijn mensen vooral opgelucht: het scheelt hun ook een middag dwalen door een winkelstraat.',
+  },
+  {
+    segment: 'spullen',
+    ring: 'vandaag',
     titel: 'Doe minimaal vier jaar met je telefoon',
     tekst:
       'Bij elektronica zit de impact vooral in de productie, niet in het stroomverbruik. Langer gebruiken is dus verreweg het belangrijkst.',
@@ -666,6 +705,22 @@ export const items = [
       { tekst: 'Intentioneel leven', url: 'https://pfauth.com/intentioneel-leven/' },
       { tekst: 'De insectencrisis', url: 'https://www.atlascontact.nl/boek/de-insectencrisis/' },
     ],
+  },
+  {
+    segment: 'buiten',
+    ring: 'vandaag',
+    titel: 'Praat erover',
+    tekst:
+      'Begin erover bij de koffie, op een verjaardag, aan tafel. Niet om iemand te overtuigen, gewoon om te vertellen wat je zelf doet.',
+    waarom:
+      'Dit is misschien wel het belangrijkste item op deze hele radar, en het kost je helemaal niets. Zolang niemand erover begint, denkt iedereen dat hij de enige is die er wakker van ligt. Zodra je het uitspreekt blijkt steeds weer dat de halve tafel zich net zo goed zorgen maakt, en dat ze het alleen nooit hardop zeggen.\n\nEn het loopt twee kanten op. Ik heb zelf de helft van wat op deze radar staat van anderen geleerd, gewoon doordat iemand terloops vertelde wat hij deed. Als jij vertelt dat je je bank hebt verruild, weet de volgende dat het kan. Dat is de enige manier waarop dit soort keuzes zich verspreidt.',
+  },
+  {
+    segment: 'buiten',
+    ring: 'vandaag',
+    titel: 'Word lid van een partij die het serieus neemt',
+    tekst:
+      'Stemmen is één avond in de vier jaar. Lidmaatschap telt het hele jaar door, want het bepaalt mede welke kant een partij op beweegt. Ik zit bij de Partij voor de Dieren.',
   },
   {
     segment: 'buiten',

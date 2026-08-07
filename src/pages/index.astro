@@ -15,6 +15,54 @@ const detailData = blips.map((b) => ({
   ringNaam: rings.find((r) => r.id === b.ring).naam,
   segment: perSegment.find((s) => s.id === b.segment).naam,
 }));
+
+// De vijf met de meeste impact. Verwijst per stuk naar een item op de radar,
+// zodat de nummers vanzelf meelopen als er items bijkomen.
+const zoek = (titel) => {
+  const blip = blips.find((b) => b.titel === titel);
+  if (!blip) throw new Error(`Top 5 verwijst naar onbekend item: ${titel}`);
+  return blip.nr;
+};
+
+const topVijf = [
+  {
+    nr: zoek('Vliegen'),
+    kop: 'Vlieg niet',
+    tekst:
+      'Eén vliegreis kan in een paar uur meer uitstoot opleveren dan al je andere keuzes in een heel jaar goedmaken. Dit is de enige op deze lijst waarbij niets doen precies het goede is.',
+  },
+  {
+    nr: zoek('Dakisolatie'),
+    kop: 'Isoleer je huis',
+    tekst:
+      'Verwarming is verreweg de grootste energiepost van een Nederlands huishouden. Dak, spouw, vloer, en daarna pas een warmtepomp. In die volgorde, anders verwarm je een vergiet.',
+  },
+  {
+    nr: zoek('Fors minder vlees'),
+    kop: 'Eet minder vlees en zuivel',
+    tekst:
+      'De grootste knop die je kunt omzetten zonder iets aan te schaffen. Je maakt de keuze gewoon opnieuw bij de volgende maaltijd.',
+  },
+  {
+    nr: zoek('Stap over naar een duurzame bank'),
+    kop: 'Verhuis je geld',
+    tekst:
+      'Een half uur werk voor je bank, je pensioen en je verzekeraar. Daarna werkt het jarenlang door met bedragen waar je zelf nooit bij in de buurt komt. De beste verhouding tussen moeite en effect die er is.',
+  },
+  {
+    nr: zoek('Koop minder, en win tijd'),
+    kop: 'Koop minder',
+    tekst:
+      'Alles wat je niet koopt, hoeft ook niet gemaakt, verscheept en later weggegooid te worden. En het levert je geld en tijd op in plaats van dat het je iets kost.',
+  },
+];
+
+const praatNr = zoek('Praat erover');
+
+// Hoeveel items zijn niet afhankelijk van een eigen huis of tuin?
+const zonderEigenHuis = telling
+  .filter((r) => r.id === 'vandaag' || r.id === 'vervang')
+  .reduce((som, r) => som + r.aantal, 0);
 ---
 
 <html lang="nl">
@@ -39,6 +87,7 @@ const detailData = blips.map((b) => ({
         </a>
         <nav>
           <a href="#radar">De radar</a>
+          <a href="#top5">Top 5</a>
           <a href="#waarom">Maakt het uit?</a>
           <a href="#over">Over mij</a>
         </nav>
@@ -93,6 +142,44 @@ const detailData = blips.map((b) => ({
               Tik op een stip in de radar, of op een item in de lijst hieronder.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section id="top5" class="topvijf">
+        <div class="omhulsel">
+          <p class="bovenlabel">Als je maar vijf dingen doet</p>
+          <h2>De vijf met de meeste impact</h2>
+          <p class="lead">
+            Achtentachtig items is veel, en niet alles weegt even zwaar. Dit zijn de vijf
+            waar het volgens mij echt om gaat. Geen wetenschappelijke ranglijst, wel mijn
+            eerlijke inschatting. Wat bij jou bovenaan staat hangt af van je situatie: wie
+            nooit vliegt, begint gewoon bij nummer twee.
+          </p>
+
+          <ol class="topvijf-lijst">
+            {topVijf.map((t, i) => (
+              <li>
+                <span class="topvijf-rang">{i + 1}</span>
+                <div>
+                  <h3>
+                    <button type="button" class="item-knop topvijf-knop" data-nr={t.nr}>
+                      {t.kop}
+                      <span class="topvijf-nr">nr. {t.nr}</span>
+                    </button>
+                  </h3>
+                  <p>{t.tekst}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <p class="topvijf-na">
+            En dan is er nog één die in geen enkele berekening past:
+            <button type="button" class="item-knop tekstknop" data-nr={praatNr}>
+              erover praten
+            </button>. Die verandert je eigen uitstoot nauwelijks, maar wel die van iedereen
+            om je heen. Daarmee is het misschien wel de belangrijkste van allemaal.
+          </p>
         </div>
       </section>
 
@@ -175,6 +262,21 @@ const detailData = blips.map((b) => ({
               Ik ben Dian, en ik woon met mijn gezin in een gewoon huis in Nederland. Alles
               op deze radar doe ik zelf, of heb ik zelf geprobeerd. Waar ik iets niet doe,
               staat dat er ook bij, inclusief het feit dat ik heel af en toe vlieg.
+            </p>
+            <p>
+              Eén ding waar ik eerlijk over wil zijn: dit is de radar van iemand met een
+              koophuis en een tuin. Dat is een voorrecht, en je ziet het terug in de
+              buitenste ring. Een groen dak, spouwmuurisolatie of een regenton kan ik alleen
+              noemen omdat ik toevallig eigenaar ben van de muren. Woon je in een huurhuis
+              of een flat, dan valt dat deel weg, en dat is oprecht rot om te lezen als je
+              juist dán het gevoel hebt dat je niets kunt.
+            </p>
+            <p>
+              Daarom dit: de twee binnenste ringen zijn helemaal niet afhankelijk van wat
+              voor huis je hebt. Dat zijn er {zonderEigenHuis} van de {totaal}. Alles wat je
+              eet, koopt, weggooit, verzekert, spaart of zegt telt net zo hard, of je nu
+              huurt of koopt. Voor de rest geldt: een verhuurder is verplicht te isoleren,
+              en dat vragen is gratis.
             </p>
             <p>
               Dit is bedoeld om je te inspireren, niet om je de les te lezen. Het is
@@ -449,6 +551,91 @@ const detailData = blips.map((b) => ({
 
       .radar-blok {
         margin: 2.5rem 0 0;
+      }
+
+      .topvijf {
+        padding: clamp(3rem, 7vw, 5rem) 0 clamp(2rem, 5vw, 3rem);
+      }
+
+      .topvijf-lijst {
+        list-style: none;
+        margin: 2.5rem 0 0;
+        padding: 0;
+        display: grid;
+        gap: 1.6rem;
+        max-width: 60rem;
+      }
+
+      .topvijf-lijst li {
+        display: flex;
+        gap: 1.2rem;
+        align-items: flex-start;
+      }
+
+      .topvijf-rang {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 50%;
+        background: var(--bos);
+        color: var(--room);
+        font-family: var(--serif);
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      .topvijf-lijst h3 {
+        margin: 0 0 0.2rem;
+      }
+
+      .topvijf-lijst p {
+        margin: 0;
+        color: var(--grijsgroen);
+        max-width: 46em;
+      }
+
+      .topvijf-knop {
+        font-family: var(--serif);
+        font-size: 1.3rem;
+        font-weight: 700;
+        padding: 0.1rem 0.35rem;
+        margin-left: -0.35rem;
+        gap: 0.7rem;
+        align-items: baseline;
+        width: auto;
+      }
+
+      .topvijf-nr {
+        font-family: var(--sans);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--bos-mid);
+        white-space: nowrap;
+      }
+
+      .topvijf-na {
+        margin-top: 2.2rem;
+        max-width: 46em;
+        color: var(--grijsgroen);
+      }
+
+      .tekstknop {
+        display: inline;
+        width: auto;
+        padding: 0;
+        font: inherit;
+        color: var(--bos-mid);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .tekstknop:hover {
+        background: none;
+        color: var(--inkt);
       }
 
       .lijst-sectie {

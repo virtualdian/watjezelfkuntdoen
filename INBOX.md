@@ -1,5 +1,9 @@
 # Inbox
 
+> Let op: sinds de site live staat is `src/data/radar.js` de bron van waarheid
+> voor alles wat gepubliceerd is. Dit bestand is de ruwe vangbak voor nieuwe
+> invallen en voor wat nog niet op de radar staat.
+
 Ruwe vangbak. Alles wat we thuis doen komt hier eerst in, in spreektaal. Pas
 later thema, ring en definitieve tekst.
 

@@ -189,8 +189,11 @@ const zonderEigenHuis = telling
           <h2>Alle {totaal} dingen</h2>
           <div class="kolommen">
             {perSegment.map((seg) => (
-              <div class="segment-kaart">
-                <h3>{seg.naam}</h3>
+              <details class="segment-kaart" open>
+                <summary>
+                  <h3>{seg.naam}</h3>
+                  <span class="segment-aantal">{seg.items.length}</span>
+                </summary>
                 {seg.ringen.map((ring) => (
                   <div class="ringgroep">
                     <p class={`ringkop ringkop-${ring.id}`}>{ring.naam}</p>
@@ -206,7 +209,7 @@ const zonderEigenHuis = telling
                     </ul>
                   </div>
                 ))}
-              </div>
+              </details>
             ))}
           </div>
         </div>
@@ -447,6 +450,19 @@ const zonderEigenHuis = telling
           });
         });
       });
+
+      // Op een telefoon beginnen de themablokken dicht, anders is die lijst
+      // eindeloos scrollen. Op een groot scherm staan ze gewoon open.
+      const themaBlokken = [...document.querySelectorAll('.segment-kaart')];
+      const stelThemaBlokkenIn = () => {
+        themaBlokken.forEach((blok) => {
+          blok.open = !smal();
+        });
+      };
+      stelThemaBlokkenIn();
+      window
+        .matchMedia('(max-width: 760px)')
+        .addEventListener('change', stelThemaBlokkenIn);
     </script>
 
     <style>
@@ -666,6 +682,49 @@ const zonderEigenHuis = telling
         border-radius: 14px;
         padding: 1.3rem 1.4rem;
         margin-bottom: 1.4rem;
+      }
+
+      .segment-kaart > summary {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        cursor: pointer;
+        list-style: none;
+      }
+
+      .segment-kaart > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /* Eigen pijltje, zodat hij op mobiel meedraait bij openklappen */
+      .segment-kaart > summary::after {
+        content: '';
+        width: 0.55rem;
+        height: 0.55rem;
+        margin-left: auto;
+        border-right: 2px solid var(--bos-mid);
+        border-bottom: 2px solid var(--bos-mid);
+        transform: rotate(45deg) translate(-0.1rem, -0.1rem);
+        transition: transform 0.15s ease;
+        flex: none;
+      }
+
+      .segment-kaart[open] > summary::after {
+        transform: rotate(-135deg) translate(-0.15rem, -0.15rem);
+      }
+
+      .segment-aantal {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--bos-mid);
+        background: var(--room-diep);
+        border-radius: 999px;
+        padding: 0.1rem 0.5rem;
+        flex: none;
+      }
+
+      .segment-kaart > summary h3 {
+        margin: 0;
       }
 
       .segment-kaart h3 {

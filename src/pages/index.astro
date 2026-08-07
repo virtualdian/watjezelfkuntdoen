@@ -296,9 +296,22 @@ const zonderEigenHuis = telling
               Mis je iets, of doe je thuis iets wat hier nog niet staat? De site is open
               source. Stuur gerust een pull request.
             </p>
-            <p>
-              <a class="knop" href="#" data-koffie>Trakteer me op een koffie</a>
-            </p>
+            <div class="koffie">
+              <h3>Vond je dit een nuttige site?</h3>
+              <p>
+                Trakteer me dan op een bakkie koffie. Er zit geen verdienmodel achter en dat
+                blijft ook zo, maar het is een fijne duw in de rug om ermee door te gaan en
+                nog meer mensen te laten zien wat er wél kan.
+              </p>
+              <a
+                class="knop"
+                href="https://bunq.me/watjezelfkuntdoen"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Trakteer me op een koffie
+              </a>
+            </div>
           </div>
           <aside class="colofon">
             <h3>Colofon</h3>
@@ -433,11 +446,6 @@ const zonderEigenHuis = telling
             else p.removeAttribute('data-actief');
           });
         });
-      });
-
-      document.querySelector('[data-koffie]')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert('Hier komt de Buy Me a Coffee-knop zodra de pagina is aangemaakt.');
       });
     </script>
 
@@ -777,6 +785,23 @@ const zonderEigenHuis = telling
           grid-template-columns: 1fr;
           gap: 2rem;
         }
+      }
+
+      .koffie {
+        margin-top: 2.4rem;
+        padding: 1.6rem 1.8rem;
+        background: var(--room);
+        border: 1px solid rgba(22, 38, 28, 0.12);
+        border-radius: 14px;
+      }
+
+      .koffie h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .koffie p {
+        color: var(--grijsgroen);
+        max-width: 42em;
       }
 
       .colofon {

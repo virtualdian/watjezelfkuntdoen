@@ -96,9 +96,9 @@ const ringFill = {
           role="button"
           aria-label={`${b.nr}. ${b.titel}`}
         >
-          <circle class="blip-raak" cx={b.x} cy={b.y} r="16" />
-          <circle class="blip-dot" cx={b.x} cy={b.y} r="11.5" />
-          <text class="blip-nr" x={b.x} y={b.y + 3.6} text-anchor="middle">{b.nr}</text>
+          <circle class="blip-raak" cx={b.x} cy={b.y} r="18" />
+          <circle class="blip-dot" cx={b.x} cy={b.y} r="12.4" />
+          <text class="blip-nr" x={b.x} y={b.y + 4} text-anchor="middle">{b.nr}</text>
         </g>
       ))}
     </g>
@@ -202,7 +202,7 @@ const ringFill = {
   }
 
   .blip-nr {
-    font-size: 11px;
+    font-size: 12.5px;
     font-weight: 700;
     fill: var(--room);
     pointer-events: none;
@@ -217,7 +217,7 @@ const ringFill = {
   .blip.actief .blip-dot {
     fill: var(--amber);
     stroke: var(--inkt);
-    r: 14;
+    r: 16;
   }
 
   .blip:hover .blip-nr,

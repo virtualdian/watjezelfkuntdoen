@@ -26,38 +26,45 @@ const zoek = (titel) => {
 
 const topVijf = [
   {
-    nr: zoek('Vliegen'),
-    kop: 'Vlieg niet',
-    tekst:
-      'Eén vliegreis kan in een paar uur meer uitstoot opleveren dan al je andere keuzes in een heel jaar goedmaken. Dit is de enige op deze lijst waarbij niets doen precies het goede is.',
-  },
-  {
     nr: zoek('Dakisolatie'),
     kop: 'Isoleer je huis',
+    cijfer: '2.000 kg per jaar',
     tekst:
-      'Verwarming is verreweg de grootste energiepost van een Nederlands huishouden. Dak, spouw, vloer, en daarna pas een warmtepomp. In die volgorde, anders verwarm je een vergiet.',
+      'Een slecht geïsoleerde hoekwoning naar goed geïsoleerd scheelt zo’n 2.000 kg CO₂ per jaar. Verreweg de grootste enkele maatregel die er is, en meteen de lastigste: je moet het huis ervoor bezitten en je moet het kunnen betalen. Dak, spouw, vloer, en daarna pas een warmtepomp.',
+  },
+  {
+    nr: zoek('Fiets naar je werk'),
+    kop: 'Laat de auto vaker staan',
+    cijfer: '1.100 kg per jaar',
+    tekst:
+      'Halveer je autogebruik door te fietsen, het ov te pakken of te carpoolen, en je zit al op ongeveer 1.100 kg per jaar. Dit is de op één na grootste, en je hebt er niemands toestemming voor nodig.',
+  },
+  {
+    nr: zoek('Zet de thermostaat een tandje lager'),
+    kop: 'Stook slimmer',
+    cijfer: '700 kg per jaar',
+    tekst:
+      'Thermostaat lager, korter douchen, niet stoken in kamers waar niemand is. Samen zo’n 700 kg per jaar, en het kost je geen cent. Sterker nog, het levert geld op.',
+  },
+  {
+    nr: zoek('Koop minder, en win tijd'),
+    kop: 'Koop minder spullen',
+    cijfer: '340 kg per persoon',
+    tekst:
+      'Lenen, tweedehands kopen en gewoon minder nieuw aanschaffen komt op ongeveer 340 kg per persoon per jaar, dus ruim 700 kg voor een gemiddeld huishouden.',
   },
   {
     nr: zoek('Fors minder vlees'),
     kop: 'Eet minder vlees en zuivel',
+    cijfer: '330 kg per persoon',
     tekst:
-      'De grootste knop die je kunt omzetten zonder iets aan te schaffen. Je maakt de keuze gewoon opnieuw bij de volgende maaltijd.',
-  },
-  {
-    nr: zoek('Stap over naar een duurzame bank'),
-    kop: 'Verhuis je geld',
-    tekst:
-      'Een half uur werk voor je bank, je pensioen en je verzekeraar. Daarna werkt het jarenlang door met bedragen waar je zelf nooit bij in de buurt komt. De beste verhouding tussen moeite en effect die er is.',
-  },
-  {
-    nr: zoek('Koop minder, en win tijd'),
-    kop: 'Koop minder',
-    tekst:
-      'Alles wat je niet koopt, hoeft ook niet gemaakt, verscheept en later weggegooid te worden. En het levert je geld en tijd op in plaats van dat het je iets kost.',
+      'Van zes keer per week vlees naar één keer scheelt zo’n 330 kg per persoon per jaar. Eerlijk gezegd minder dan ik zelf dacht, en nog steeds een van de makkelijkste knoppen die er is: je hoeft er niets voor aan te schaffen.',
   },
 ];
 
 const praatNr = zoek('Praat erover');
+const vliegNr = zoek('Vliegen');
+const geldNr = zoek('Stap over naar een duurzame bank');
 
 // Hoeveel items zijn niet afhankelijk van een eigen huis of tuin?
 const zonderEigenHuis = telling
@@ -150,10 +157,11 @@ const zonderEigenHuis = telling
           <p class="bovenlabel">Als je maar vijf dingen doet</p>
           <h2>De vijf met de meeste impact</h2>
           <p class="lead">
-            Achtentachtig items is veel, en niet alles weegt even zwaar. Dit zijn de vijf
-            waar het volgens mij echt om gaat. Geen wetenschappelijke ranglijst, wel mijn
-            eerlijke inschatting. Wat bij jou bovenaan staat hangt af van je situatie: wie
-            nooit vliegt, begint gewoon bij nummer twee.
+            Achtentachtig items is veel, en niet alles weegt even zwaar. Deze volgorde is
+            niet mijn onderbuikgevoel maar komt uit de klimaatklappers van Milieu Centraal,
+            die per maatregel doorrekenen hoeveel CO₂ een Nederlands huishouden bespaart. De
+            getallen staan erbij, want ze verrassen bijna iedereen. Mij ook: ik had zelf
+            gedacht dat minder vlees eten hoger zou eindigen dan isolatie.
           </p>
 
           <ol class="topvijf-lijst">
@@ -167,19 +175,48 @@ const zonderEigenHuis = telling
                       <span class="topvijf-nr">nr. {t.nr}</span>
                     </button>
                   </h3>
+                  <p class="topvijf-cijfer">{t.cijfer}</p>
                   <p>{t.tekst}</p>
                 </div>
               </li>
             ))}
           </ol>
 
-          <p class="topvijf-na">
-            En dan is er nog één die in geen enkele berekening past:
-            <button type="button" class="item-knop tekstknop" data-nr={praatNr}>
-              erover praten
-            </button>. Die verandert je eigen uitstoot nauwelijks, maar wel die van iedereen
-            om je heen. Daarmee is het misschien wel de belangrijkste van allemaal.
-          </p>
+          <div class="topvijf-na">
+            <h3>Drie die er bewust niet bij staan</h3>
+            <p>
+              <button type="button" class="item-knop tekstknop" data-nr={vliegNr}>
+                Vliegen
+              </button>, omdat het cijfer volledig afhangt van waar je heen gaat. Een
+              citytrip naar Berlijn met de trein in plaats van het vliegtuig scheelt 400 kg
+              voor twee personen. Maar één retourvlucht naar Bangkok of New York is 1.800 tot
+              2.200 kg per persoon. In je eentje dus evenveel als het isoleren van een heel
+              huis oplevert, en met z’n vieren meer dan alles op deze lijst bij elkaar. Vlieg
+              je, dan is dit met afstand je grootste knop. Vlieg je niet, dan telt hij
+              helemaal niet mee. Daarom past hij niet in een ranglijst.
+            </p>
+            <p>
+              <button type="button" class="item-knop tekstknop" data-nr={geldNr}>
+                Je geld verhuizen
+              </button>, omdat het niet in deze rekenwijze past. Zo’n lijst rekent jouw eigen
+              verbruik door, en je spaargeld is geen verbruik. Het effect loopt via waar
+              banken en pensioenfondsen dat geld in stoppen, en dat laat zich niet in kilo’s
+              per huishouden uitdrukken. Het kost je een half uur en het werkt jarenlang
+              door, dus wat mij betreft hoort het nog steeds bovenaan.
+            </p>
+            <p>
+              <button type="button" class="item-knop tekstknop" data-nr={praatNr}>
+                Erover praten
+              </button>, om dezelfde reden. Het verandert je eigen uitstoot nauwelijks, maar
+              wel die van iedereen om je heen. Daarmee is het misschien wel de belangrijkste
+              van allemaal, en tegelijk de enige die je onmogelijk kunt uitrekenen.
+            </p>
+            <p class="bron">
+              Cijfers: <a href="https://www.milieucentraal.nl/klimaat-en-aarde/klimaatverandering/klimaatklappers/" target="_blank" rel="noopener noreferrer">Klimaatklappers van Milieu Centraal</a>.
+              Een gemiddeld Nederlands huishouden zit op ongeveer 16.500 kg CO₂ per jaar, en
+              met alle maatregelen samen kan dat naar zo’n 5.700 kg.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -641,10 +678,31 @@ const zonderEigenHuis = telling
         white-space: nowrap;
       }
 
+      .topvijf-cijfer {
+        font-size: 0.8rem !important;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--bos-mid) !important;
+        margin: 0 0 0.35rem !important;
+      }
+
       .topvijf-na {
-        margin-top: 2.2rem;
-        max-width: 46em;
+        margin-top: 3rem;
+        max-width: 48em;
         color: var(--grijsgroen);
+        border-top: 1px solid rgba(22, 38, 28, 0.14);
+        padding-top: 1.6rem;
+      }
+
+      .topvijf-na h3 {
+        color: var(--inkt);
+        margin-bottom: 0.9rem;
+      }
+
+      .topvijf-na .bron {
+        font-size: 0.88rem;
+        margin-top: 1.4rem;
       }
 
       .tekstknop {

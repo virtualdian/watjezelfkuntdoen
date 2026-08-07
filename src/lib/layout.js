@@ -12,7 +12,7 @@ export const SIZE = 900;
 const SPAN = 360 / segmenten.length;
 const PAD_DEG = 3;
 const PAD_RAD = 7;
-const MIN_SPACING = 26;
+const MIN_SPACING = 31;
 
 const rad = (deg) => ((deg - 90) * Math.PI) / 180;
 const pt = (r, deg) => [CX + r * Math.cos(rad(deg)), CY + r * Math.sin(rad(deg))];
@@ -89,7 +89,7 @@ export function buildRadar() {
       const r = rIn + ((rOut - rIn) * (b + 0.5)) / bands;
       bandItems.forEach((item, k) => {
         const deg = a0 + ((a1 - a0) * (k + 0.5)) / bandItems.length;
-        const jitter = (noise(item.nr) - 0.5) * 4;
+        const jitter = (noise(item.nr) - 0.5) * 2;
         const [x, y] = pt(r + jitter, deg);
         blips.push({ ...item, x: f(x), y: f(y) });
       });

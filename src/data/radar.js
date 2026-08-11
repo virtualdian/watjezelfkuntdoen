@@ -129,6 +129,31 @@ export const items = [
   {
     segment: 'eten',
     ring: 'vervang',
+    titel: 'Vlees met drie sterren Beter Leven',
+    tekst:
+      'Lukt biologisch of wild niet, kies dan in elk geval drie sterren. Dat is de hoogste trede van het keurmerk van de Dierenbescherming, en het scheelt het dier een heel leven.',
+    waarom:
+      'Het Beter Leven keurmerk werkt met één, twee of drie sterren. Bij één ster gaat het om een bescheiden verbetering ten opzichte van de standaard, bij drie sterren om buitenleven, veel meer ruimte en langzamer groeiende rassen. Het gat tussen één en drie sterren is dus groot, en veel groter dan de meeste mensen denken als ze in de supermarkt naar dat logo kijken.\n\nDe reden dat dit hier staat en niet hoger: één ster is te makkelijk te halen om echt iets te betekenen. Als je toch de moeite neemt om op een keurmerk te letten, doe het dan meteen goed.',
+    links: [
+      { tekst: 'Beter Leven keurmerk', url: 'https://beterleven.dierenbescherming.nl/' },
+    ],
+  },
+  {
+    segment: 'eten',
+    ring: 'vervang',
+    titel: 'Let op Fairtrade en Rainforest Alliance',
+    tekst:
+      'Bij koffie, thee, cacao en bananen zeggen deze twee keurmerken echt iets over de boer aan het begin van de keten. Ze staan op meer producten dan je denkt, ook bij de gewone supermarkt.',
+    waarom:
+      'Fairtrade gaat vooral over de prijs: er geldt een minimumprijs plus een premie voor de coöperatie, zodat een boer niet volledig is overgeleverd aan de wereldmarkt. Rainforest Alliance, dat in 2018 samenging met UTZ, richt zich sterker op de manier van telen: ontbossing, bodem, water en arbeidsomstandigheden.\n\nGeen van beide is perfect en er is terechte kritiek op allebei. Maar het alternatief is een product zonder enige controle op wat er aan het begin van de keten gebeurt, en dat is aantoonbaar slechter. Zie het als een ondergrens, niet als een garantie.',
+    links: [
+      { tekst: 'Fairtrade Nederland', url: 'https://www.fairtradenederland.nl/' },
+      { tekst: 'Rainforest Alliance', url: 'https://www.rainforest-alliance.org/nl/' },
+    ],
+  },
+  {
+    segment: 'eten',
+    ring: 'vervang',
     titel: 'Biologische en fairtrade koffie',
     tekst:
       'Ik drink Simon Lévelt, maar er zijn er meer. Koffie is het product waar je het vaakst per dag een keuze in maakt.',
@@ -166,10 +191,21 @@ export const items = [
   {
     segment: 'eten',
     ring: 'laat',
-    titel: 'Drankjes die de statiegeldregeling ontwijken',
+    titel: 'Appelsientje en Dubbelfriss',
     tekst:
-      'Zit er een klein beetje zuivel in een drankje, dan valt het buiten de statiegeldregeling. Handig voor de fabrikant, zonde van het plastic.',
-    bronNodig: true,
+      'Riedel, de maker van Appelsientje, Dubbelfriss en Coolbest, voegt een vleugje melk toe aan het sap. Daarmee telt het als zuiveldrank, en zuiveldranken zijn vrijgesteld van de belasting op frisdrank. Ik zie de flesjes bovendien massaal terug als ik mijn buurt schoonmaak.',
+    waarom:
+      'Dit is het duidelijkste voorbeeld dat ik ken van een bedrijf dat de regel volgt en de bedoeling ervan compleet negeert. Nederland heft belasting op frisdrank om suikerhoudende dranken duurder te maken. Zuiveldranken zijn daarvan uitgezonderd. Riedel voegt 0,02% melkvet toe, in de vorm van melkpermeaat, een restproduct van bijvoorbeeld kwark. Genoeg om als zuiveldrank te gelden, veel te weinig om er iets van te proeven. De staatssecretaris heeft bevestigd dat het mag onder de huidige wet en heeft aangekondigd naar die uitzondering te gaan kijken.\n\nEn er zit een tweede staart aan. Precies dezelfde uitzondering bestaat bij statiegeld: plastic flessen met zuiveldrank vallen buiten de statiegeldregeling. Dat is geen theoretisch probleem. Uit de evaluatie van de statiegeldregeling blijkt dat flessen zonder statiegeld ongeveer twintig procent van alle plastic flessen zijn, en dat ze juist daarom relatief vaak in het zwerfafval terechtkomen. Dat is precies wat ik zie als ik met een grijper door de buurt loop. Vanaf 2029 zouden sommige zuiveldranken alsnog onder statiegeld moeten vallen.',
+    links: [
+      {
+        tekst: 'Radar over het melkvet in Dubbelfriss en Appelsientje',
+        url: 'https://radar.avrotros.nl/artikel/waarom-zit-er-ineens-melkvet-in-mijn-dubbelfriss-of-appelsientje-60489',
+      },
+      {
+        tekst: 'CE Delft, evaluatie van de statiegeldregeling',
+        url: 'https://ce.nl/wp-content/uploads/2025/04/CE_Delft_240379_Evaluatie_statiegeld_Def-1.pdf',
+      },
+    ],
   },
 
   // ---------------------------------------------------------- huishouden
@@ -241,6 +277,13 @@ export const items = [
       'Er zit geen kalk in, dus je planten zijn er blij mee en je strijkijzer hoef je nooit meer te ontkalken. Twee keer gratis, uit een bakje dat de meeste mensen in de gootsteen kieperen.',
     waarom:
       'Condenswater uit een droger is zacht water: het is verdampt en weer neergeslagen, dus de kalk blijft achter. Precies daarom is het ideaal voor een strijkijzer, waar kalkaanslag normaal het probleem is.\n\nEén eerlijke kanttekening: helemaal schoon is het niet. Er komen vezels en restjes wasmiddel in mee. Voor je kamerplanten, de border en het strijkijzer is dat geen enkel bezwaar. Ik zou het alleen niet over eetbare planten gieten, dan pak ik gewoon de regenton.',
+  },
+  {
+    segment: 'huishouden',
+    ring: 'vervang',
+    titel: 'Keukenrol met halve vellen',
+    tekst:
+      'Zo’n rol met een perforatie halverwege scheelt enorm, want je pakt bijna nooit een heel vel als je maar iets kleins hoeft af te vegen. Zelfde prijs, zelfde schap, en je rol gaat twee keer zo lang mee.',
   },
   {
     segment: 'huishouden',
@@ -386,6 +429,15 @@ export const items = [
     titel: 'Haal de tegels eruit',
     tekst:
       'Elke tegel die je vervangt door groen vangt water op, koelt af en geeft iets te eten aan de beestjes.',
+  },
+  {
+    segment: 'tuin',
+    ring: 'vandaag',
+    titel: 'Gooi je koffiedik in de tuin',
+    tekst:
+      'Het gaat bij mij gewoon de border in. Ik heb er zelfs een keer oesterzwammen op gekweekt. Koffiedik is geen afval, het is materiaal waar nog van alles mee kan.',
+    waarom:
+      'Koffiedik is het restant van iets dat de halve wereld over is gevlogen, en bij de meeste mensen gaat het na één kop rechtstreeks de bak in. Terwijl het gewoon organisch materiaal is dat de bodem voedt. Strooi het uit over de border of gooi het bij je compost.\n\nEn er kan meer mee. Oesterzwammen groeien er prima op: je hebt alleen verse koffiedik, wat zwambroed en een donkere plek nodig. Ik heb het een keer gedaan en dat werkte verrassend goed. Het is ook het soort project waar kinderen niet meer van weg te slaan zijn, want je ziet er binnen twee weken iets gebeuren.',
   },
   {
     segment: 'tuin',
@@ -566,9 +618,15 @@ export const items = [
     ring: 'vandaag',
     titel: 'Weet wat er met je spaargeld gebeurt',
     tekst:
-      'Je spaargeld staat niet stil op een plank. Het wordt belegd, en waarin dat gebeurt verschilt enorm per bank. De Eerlijke Bankwijzer laat het je zien.',
-    links: [{ tekst: 'Eerlijke Geldwijzer', url: 'https://eerlijkegeldwijzer.nl/' }],
-    bronNodig: true,
+      'Je spaargeld staat niet stil op een plank. Het wordt belegd, en waarin dat gebeurt verschilt enorm per bank. De Eerlijke Bankwijzer rekent het voor je uit.',
+    waarom:
+      'De Eerlijke Bankwijzer beoordeelt Nederlandse banken op onder andere mensenrechten, wapens, olie en gas, biodiversiteit en dierenwelzijn. In de beoordeling van maart 2026 staat Triodos bovenaan met een 9,4, gevolgd door ASN met een 8,6. ING en ABN AMRO blijven op een 6 staan. Rabobank zakte het hardst, van een 7 naar een 5, en staat daarmee onderaan.\n\nWat me daarbij het meest opvalt: het gemiddelde van alle banken samen ging omlaag, van afgerond een 7 in 2023 naar een 6 nu. Banken worden dus niet vanzelf beter, ook niet nu iedereen het over verduurzaming heeft. Dat is precies waarom het uitmaakt waar jij je geld neerzet, want dat is het enige signaal dat een bank echt voelt.',
+    links: [
+      {
+        tekst: 'Eerlijke Bankwijzer: hoe scoort jouw bank?',
+        url: 'https://eerlijkegeldwijzer.nl/bankwijzer/hoe-scoort-jouw-bank/',
+      },
+    ],
   },
   {
     segment: 'geld',
@@ -592,7 +650,8 @@ export const items = [
     segment: 'geld',
     ring: 'vervang',
     titel: 'Stap over naar een duurzame bank',
-    tekst: 'Triodos of ASN. Eén formulier, en het werkt door in alles wat de bank doet.',
+    tekst:
+      'Triodos of ASN. Die staan met een 9,4 en een 8,6 bovenaan bij de Eerlijke Bankwijzer, terwijl de grootbanken op een 5 of een 6 blijven steken. Eén formulier, en het werkt door in alles wat de bank met jouw geld doet.',
     links: [
       { tekst: 'Triodos', url: 'https://www.triodos.nl/' },
       { tekst: 'ASN Bank', url: 'https://www.asnbank.nl/' },

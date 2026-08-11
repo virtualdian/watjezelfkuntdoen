@@ -1,10 +1,29 @@
 ---
+import { execSync } from 'node:child_process';
 import '../styles/global.css';
 import Radar from '../components/Radar.astro';
 import { buildRadar } from '../lib/layout.js';
 import { rings } from '../data/radar.js';
 
+// Datum van de laatste commit, zodat "laatst bijgewerkt" vanzelf meeloopt.
+let bijgewerkt;
+try {
+  bijgewerkt = new Date(execSync('git log -1 --format=%cI', { encoding: 'utf8' }).trim());
+  if (Number.isNaN(bijgewerkt.getTime())) throw new Error('geen datum');
+} catch {
+  bijgewerkt = new Date();
+}
+const bijgewerktKort = `${String(bijgewerkt.getMonth() + 1).padStart(2, '0')}/${bijgewerkt.getFullYear()}`;
+const bijgewerktISO = bijgewerkt.toISOString().slice(0, 10);
+
+const canoniek = new URL(Astro.url.pathname, Astro.site).href;
+const deelPlaatje = new URL(`${import.meta.env.BASE_URL}og.png`.replace(/\/+/g, '/'), Astro.site)
+  .href;
+
 const { blips, perSegment, telling, totaal } = buildRadar();
+
+const deelTekst = `${totaal} dingen die ik thuis doe om duurzamer te leven. Geen lijstje met tips, maar wat er echt in huis, in de tuin en op de rekening gebeurt.`;
+
 const detailData = blips.map((b) => ({
   nr: b.nr,
   titel: b.titel,
@@ -77,11 +96,24 @@ const zonderEigenHuis = telling
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Wat je zelf kunt doen, een duurzaamheidsradar van thuis</title>
-    <meta
-      name="description"
-      content={`${totaal} dingen die ik thuis doe om duurzamer te leven. Geen lijstje met tips, maar wat er echt in huis, in de tuin en op de rekening gebeurt.`}
-    />
+    <meta name="description" content={deelTekst} />
     <meta name="theme-color" content="#26402f" />
+
+    <link rel="canonical" href={canoniek} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wat je zelf kunt doen" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:url" content={canoniek} />
+    <meta property="og:title" content="Wat je zelf kunt doen" />
+    <meta property="og:description" content={deelTekst} />
+    <meta property="og:image" content={deelPlaatje} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Een boomschijf met jaarringen, waarin elke stip iets is wat je zelf kunt doen." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Wat je zelf kunt doen" />
+    <meta name="twitter:description" content={deelTekst} />
+    <meta name="twitter:image" content={deelPlaatje} />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%2326402f'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23c6d9b0' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%23c6d9b0' stroke-width='2'/%3E%3C/svg%3E" />
   </head>
 
@@ -144,6 +176,9 @@ const zonderEigenHuis = telling
         </div>
 
         <div class="omhulsel">
+          <p class="bijgewerkt">
+            Laatst bijgewerkt <time datetime={bijgewerktISO}>{bijgewerktKort}</time>
+          </p>
           <div class="detail" id="detail" aria-live="polite">
             <p class="detail-leeg">
               Tik op een stip in de radar, of op een item in de lijst hieronder.
@@ -401,14 +436,38 @@ const zonderEigenHuis = telling
 
         detail.textContent = '';
 
+        const knoppen = el('div', 'detail-knoppen');
+
+        const deel = el('button', 'detail-deel', 'Kopieer link');
+        deel.type = 'button';
+        deel.addEventListener('click', async () => {
+          const url = `${location.origin}${location.pathname}#item-${d.nr}`;
+          try {
+            if (navigator.share && smal()) {
+              await navigator.share({ title: d.titel, url });
+              return;
+            }
+            await navigator.clipboard.writeText(url);
+            deel.textContent = 'Gekopieerd';
+          } catch {
+            deel.textContent = url;
+          }
+          setTimeout(() => {
+            deel.textContent = 'Kopieer link';
+          }, 2200);
+        });
+        knoppen.append(deel);
+
         const sluit = el('button', 'detail-sluit', 'Sluiten');
         sluit.type = 'button';
         sluit.addEventListener('click', () => {
           detail.classList.remove('open');
           blips.forEach((b) => b.classList.remove('actief'));
           itemKnoppen.forEach((k) => k.classList.remove('actief'));
+          history.replaceState(null, '', location.pathname + location.search);
         });
-        detail.append(sluit);
+        knoppen.append(sluit);
+        detail.append(knoppen);
 
         const kruimel = el('p', 'detail-kruimel');
         kruimel.append(el('span', 'detail-nr', String(d.nr)));
@@ -441,7 +500,21 @@ const zonderEigenHuis = telling
         detail.classList.add('open');
         blips.forEach((b) => b.classList.toggle('actief', b.dataset.nr === String(nr)));
         itemKnoppen.forEach((k) => k.classList.toggle('actief', k.dataset.nr === String(nr)));
+        history.replaceState(null, '', `#item-${d.nr}`);
       }
+
+      // Een item is los deelbaar: watjezelfkuntdoen.nl/#item-18 opent dat item.
+      function uitHash() {
+        const treffer = /^#item-(\d+)$/.exec(location.hash);
+        if (!treffer) return;
+        const nr = treffer[1];
+        if (!perNr.has(nr)) return;
+        toon(nr);
+        document.getElementById('radar').scrollIntoView({ block: 'start' });
+      }
+
+      uitHash();
+      window.addEventListener('hashchange', uitHash);
 
       blips.forEach((b) => {
         b.addEventListener('click', () => toon(b.dataset.nr));
@@ -612,6 +685,16 @@ const zonderEigenHuis = telling
 
       .radar-blok {
         margin: 2.5rem 0 0;
+      }
+
+      .bijgewerkt {
+        margin: 1.2rem 0 0;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--grijsgroen);
+        opacity: 0.75;
+        text-align: right;
       }
 
       .topvijf {

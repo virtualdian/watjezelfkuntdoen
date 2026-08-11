@@ -194,9 +194,15 @@ a {
   font-size: 0.9rem;
 }
 
-.detail-sluit {
-  display: none;
+.detail-knoppen {
   float: right;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0 0.4rem 0.9rem;
+}
+
+.detail-deel,
+.detail-sluit {
   background: none;
   border: 1px solid rgba(22, 38, 28, 0.22);
   border-radius: 999px;
@@ -205,6 +211,17 @@ a {
   font-size: 0.82rem;
   cursor: pointer;
   color: var(--grijsgroen);
+  white-space: nowrap;
+}
+
+.detail-deel:hover,
+.detail-sluit:hover {
+  color: var(--inkt);
+  border-color: rgba(22, 38, 28, 0.42);
+}
+
+.detail-sluit {
+  display: none;
 }
 
 /* Klein scherm: het detail wordt een paneel onderin, zodat je meteen ziet wat

@@ -3,14 +3,14 @@
 
 import { items, rings, segmenten } from '../data/radar.js';
 
-export const CX = 450;
-export const CY = 450;
-export const RADII = [130, 200, 270, 340, 410];
-export const R_LABEL = 428;
-export const SIZE = 900;
+export const CX = 470;
+export const CY = 470;
+export const RADII = [160, 226, 292, 358, 424];
+export const R_LABEL = 442;
+export const SIZE = 940;
 
 const SPAN = 360 / segmenten.length;
-const PAD_DEG = 3;
+const PAD_DEG = 2;
 const PAD_RAD = 7;
 const MIN_SPACING = 31;
 
@@ -89,8 +89,7 @@ export function buildRadar() {
       const r = rIn + ((rOut - rIn) * (b + 0.5)) / bands;
       bandItems.forEach((item, k) => {
         const deg = a0 + ((a1 - a0) * (k + 0.5)) / bandItems.length;
-        const jitter = (noise(item.nr) - 0.5) * 2;
-        const [x, y] = pt(r + jitter, deg);
+        const [x, y] = pt(r, deg);
         blips.push({ ...item, x: f(x), y: f(y) });
       });
     });

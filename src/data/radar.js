@@ -531,6 +531,13 @@ export const items = [
   {
     segment: 'spullen',
     ring: 'vandaag',
+    titel: 'Neem je eigen tassen mee',
+    tekst:
+      'Zonde om er bij de kassa telkens een nieuwe te kopen. Leg er standaard eentje in je auto of onder de kinderwagen, dan grijp je nooit mis.',
+  },
+  {
+    segment: 'spullen',
+    ring: 'vandaag',
     titel: 'Ga naar de bibliotheek',
     tekst:
       'Een boek dat je één keer leest hoef je niet te bezitten. Voor een paar tientjes per jaar heb je de hele collectie, inclusief de tijdschriften waar je anders een abonnement op zou nemen.',

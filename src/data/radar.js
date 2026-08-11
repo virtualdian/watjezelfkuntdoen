@@ -13,28 +13,26 @@ export const rings = [
     naam: 'Doe dit vandaag',
     kort: 'Vandaag',
     uitleg:
-      'Kost je niets. Geen aankoop, geen klus, alleen een andere handeling. Hier begin je.',
+      'Hier begin je. Het kost je geen cent en je hoeft er niets voor te kopen.',
   },
   {
     id: 'vervang',
     naam: 'Vervang bij je volgende aankoop',
     kort: 'Vervang',
-    uitleg:
-      'Je koopt het toch al. Dezelfde moeite, alleen een andere keuze in het schap.',
+    uitleg: 'Je staat toch al in dat schap. Pak dan het andere.',
   },
   {
     id: 'investeer',
     naam: 'Investeer één keer',
     kort: 'Investeer',
     uitleg:
-      'Kost geld of een zaterdag. Daarna staat het er, en doet het jarenlang zijn werk.',
+      'Hier gaat geld of een zaterdag in zitten. Daarna doet het jarenlang zijn werk zonder dat je er nog naar omkijkt.',
   },
   {
     id: 'laat',
     naam: 'Neem afscheid van',
     kort: 'Afscheid',
-    uitleg:
-      'De schors. Wat ik bewust niet meer doe of koop, en waarom.',
+    uitleg: 'De schors van de boom. Wat ik niet meer koop, en waarom niet.',
   },
 ];
 

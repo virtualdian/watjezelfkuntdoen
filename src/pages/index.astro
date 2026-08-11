@@ -22,7 +22,7 @@ const deelPlaatje = new URL(`${import.meta.env.BASE_URL}og.png`.replace(/\/+/g, 
 
 const { blips, perSegment, telling, totaal } = buildRadar();
 
-const deelTekst = `${totaal} dingen die ik thuis doe om duurzamer te leven. Geen lijstje met tips, maar wat er echt in huis, in de tuin en op de rekening gebeurt.`;
+const deelTekst = `${totaal} dingen die ik thuis doe om duurzamer te leven. Van een regenton tot je pensioen, gesorteerd naar wat het je kost.`;
 
 const detailData = blips.map((b) => ({
   nr: b.nr,
@@ -139,16 +139,22 @@ const zonderEigenHuis = telling
           <p class="bovenlabel">Een privé duurzaamheidsradar</p>
           <h1>Het maakt<br />wél uit.</h1>
           <p class="lead">
-            Bijna iedereen die ik spreek voelt zich machteloos. &ldquo;Wat ik doe maakt toch niets
-            uit, wat kan ik nou helemaal zelf doen?&rdquo; Dit is mijn antwoord: {totaal} dingen
-            die ik thuis daadwerkelijk doe. Geen lijstje met tips van internet, maar wat er
-            bij mij echt in de keuken, in de tuin en op de bankrekening gebeurt. Niet omdat
-            ik het allemaal goed doe, maar omdat ik hoop dat je er één ding uit meeneemt.
+            &ldquo;Wat ik doe maakt toch niets uit.&rdquo; Die zin hoor ik bijna wekelijks.
+            Meestal op een verjaardag, meestal van iemand die zich er wel degelijk zorgen
+            over maakt.
           </p>
           <p class="lead">
-            En het gekke is: bijna niets ervan voelt als inleveren. Minder kopen betekent
-            meer sparen en sneller aflossen, en dat betekent uiteindelijk vrije tijd. Tijd
-            is het meest schaarse goed dat je hebt.
+            Dit is mijn antwoord: {totaal} dingen die ik thuis doe. Geen tips die ik ergens
+            heb gelezen, maar wat er bij mij in de keuken staat, in de tuin groeit en van
+            mijn rekening af gaat. Ik doe het niet allemaal goed. Er staat ook op wat ik heb
+            laten liggen.
+          </p>
+          <p class="lead">
+            En het rare is dat bijna niets ervan voelt als inleveren. Reken maar mee. Elke
+            aankoop die je niet doet is geld dat je niet hoeft te verdienen. En geld dat je
+            niet hoeft te verdienen, zijn uren die je niet hoeft te werken. Minder kopen is
+            dus vrij letterlijk minder werken, en tijd is het enige dat je nergens kunt
+            bijkopen.
           </p>
           <p class="held-knoppen">
             <a class="knop" href="#radar">Bekijk de radar</a>
@@ -192,12 +198,15 @@ const zonderEigenHuis = telling
           <p class="bovenlabel">Als je maar vijf dingen doet</p>
           <h2>De vijf met de meeste impact</h2>
           <p class="lead">
-            {totaal} items is veel, en niet alles weegt even zwaar. Deze volgorde is
-            niet mijn onderbuikgevoel maar komt uit de klimaatklappers van Milieu Centraal,
-            die per maatregel doorrekenen hoeveel CO₂ een Nederlands huishouden bespaart. De
-            getallen staan erbij, want ze verrassen bijna iedereen. Mij ook: ik had zelf
-            gedacht dat minder vlees eten hoger zou eindigen dan isolatie.
+            {totaal} items is veel. En nee, ze wegen niet even zwaar.
           </p>
+          <p class="lead">
+            Ik had deze lijst eerst op gevoel gesorteerd. Toen zocht ik de cijfers op bij
+            Milieu Centraal en bleek ik er flink naast te zitten. Ik dacht dat vaker de fiets
+            pakken in plaats van de auto het meeste zou opleveren. Je huis isoleren doet
+            bijna het dubbele.
+          </p>
+          <p class="lead">Dus de getallen staan er nu gewoon bij.</p>
 
           <ol class="topvijf-lijst">
             {topVijf.map((t, i) => (
@@ -304,20 +313,29 @@ const zonderEigenHuis = telling
                 een <strong>keuze in een systeem</strong> is. Biologisch kopen verandert
                 niet de wereld, maar het verandert wél wat de boer volgend jaar durft te
                 zaaien. Overstappen naar een andere bank verandert waar jouw geld gaat
-                liggen. Dat werkt alleen als genoeg mensen het doen, en dat is precies
-                waarom het uitmaakt dat jij het doet.
+                liggen. Dat werkt alleen als genoeg mensen het doen. Daarom telt die van
+                jou.
               </p>
             </div>
             <div>
               <p>
                 En dan het tweede stuk. Duurzaam leven wordt altijd gebracht als iets wat je
-                inlevert. Bij mij werkt het andersom. Minder kopen betekent meer sparen en
-                sneller aflossen. Zelf koken van je restjes is lekkerder. Je eigen tomaten
-                smaken beter. Fietsen naar je werk is de fijnste drie kwartier van de dag.
+                inlevert. Bij mij werkt het andersom, en dat zit hem in de rekensom
+                eronder.
               </p>
               <p>
-                Wat je terugkrijgt is tijd, en tijd is het enige dat je nergens kunt
-                bijkopen. Dat is geen offer. Dat is winst.
+                Alles wat je niet koopt, hoef je ook niet te betalen. Wat je niet hoeft te
+                betalen, hoef je niet te verdienen. En wat je niet hoeft te verdienen, hoef
+                je niet te werken. Zo simpel is het: minder spullen kopen betekent op termijn
+                minder uren maken. Wij sparen en lossen af met wat we niet uitgeven, en dat
+                koopt geen boot maar ruimte in de week.
+              </p>
+              <p>
+                Daar komt bij dat zelf koken van je restjes lekkerder is, je eigen tomaten
+                beter smaken en fietsen naar je werk de fijnste drie kwartier van de dag is.
+              </p>
+              <p>
+                Wat je terugkrijgt is tijd. Dat is het enige dat je nergens kunt bijkopen.
               </p>
               <p class="waarom-nb">
                 In dezelfde geest, en veel beter opgeschreven:
@@ -332,11 +350,15 @@ const zonderEigenHuis = telling
         <div class="omhulsel over-binnen">
           <div>
             <p class="bovenlabel">Over mij</p>
-            <h2>Ik ben geen expert</h2>
+            <h2>Wie dit schrijft</h2>
             <p>
-              Ik ben Dian, en ik woon met mijn gezin in een koophuis in Nederland. Alles
-              op deze radar doe ik zelf, of heb ik zelf geprobeerd. Waar ik iets niet doe,
-              staat dat er ook bij, inclusief het feit dat ik heel af en toe vlieg.
+              Ik ben Dian. Ik woon met mijn gezin in een koophuis, ik ben geen bioloog en ik
+              heb hier geen enkele opleiding voor.
+            </p>
+            <p>
+              Alles op deze radar doe ik zelf, of heb ik geprobeerd en weer losgelaten. De
+              wasbare luiers hebben we zes maanden volgehouden. Eerlijk gezegd was dat lang
+              niet altijd leuk. En ja, ik vlieg heel af en toe; dat staat er ook gewoon op.
             </p>
             <p>
               Eén ding waar ik eerlijk over wil zijn: dit is de radar van iemand met een
@@ -373,11 +395,11 @@ const zonderEigenHuis = telling
               source. Stuur gerust een pull request.
             </p>
             <div class="koffie">
-              <h3>Vond je dit een nuttige site?</h3>
+              <h3>Ben je geïnspireerd?</h3>
               <p>
-                Trakteer me dan op een bakkie koffie. Er zit geen verdienmodel achter en dat
-                blijft ook zo, maar het is een fijne duw in de rug om ermee door te gaan en
-                nog meer mensen te laten zien wat er wél kan.
+                Trakteer me dan op een bakkie koffie. Daar betaal ik het domein van, en
+                verder is het gewoon leuk als er af en toe iets binnenkomt. Een verdienmodel
+                komt er niet, dat houd ik zo.
               </p>
               <a
                 class="knop"

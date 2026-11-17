@@ -206,6 +206,23 @@ export const items = [
     ],
   },
 
+  {
+    segment: 'eten',
+    ring: 'investeer',
+    titel: 'Een goede drinkfles en koffiebeker',
+    tekst:
+      'Wij hebben flessen van Chilly\'s, van RVS. Eén keer kopen, en daarna nooit meer een flesje water of een wegwerpbeker. Bij een koffietentje kun je gewoon vragen of ze je eigen beker willen vullen.',
+    links: [
+      { tekst: 'Chilly\'s', url: 'https://www.chillys.com/' },
+    ],
+  },
+  {
+    segment: 'eten',
+    ring: 'investeer',
+    titel: 'Een oogstabonnement bij een teler in de buurt',
+    tekst:
+      'Wij hebben er een bij PLUK!, lokaal bij ons in de buurt. Je groente komt van een veld dat je kunt aanwijzen, en de teler heeft aan het begin van het seizoen al zekerheid over de afzet. Zoek eens op oogstabonnement of zelfoogsttuin met je eigen woonplaats erbij.',
+  },
   // ---------------------------------------------------------- huishouden
   {
     segment: 'huishouden',
@@ -429,6 +446,13 @@ export const items = [
     tekst: 'De goedkoopste isolatie die er is, en bijna niemand doet het.',
   },
 
+  {
+    segment: 'energie',
+    ring: 'laat',
+    titel: 'Gloeilampen en halogeen',
+    tekst:
+      'Wij hebben ze niet meer in huis. Een ledlamp geeft hetzelfde licht voor een fractie van de stroom en gaat veel langer mee. Zit er nog ergens een halogeenspotje, vervang het dan nu en wacht niet tot hij kapotgaat.',
+  },
   // ---------------------------------------------------------------- tuin
   {
     segment: 'tuin',
@@ -706,6 +730,27 @@ export const items = [
     ],
   },
 
+  {
+    segment: 'geld',
+    ring: 'laat',
+    titel: 'Black Friday',
+    tekst:
+      'Een verschrikkelijke dag. Een hele industrie die je laat kopen wat je gisteren nog niet nodig had, alleen omdat het vandaag in de aanbieding is. Het goedkoopste product is nog altijd het product dat je niet koopt.',
+  },
+  {
+    segment: 'geld',
+    ring: 'laat',
+    titel: 'Spaarprogramma\'s voor vliegmiles',
+    tekst:
+      'Wij doen er niet aan mee. Zo\'n programma is gebouwd om je vaker te laten vliegen: hoe meer je vliegt, hoe meer punten, en die punten zet je weer om in een volgende vlucht.',
+  },
+  {
+    segment: 'geld',
+    ring: 'laat',
+    titel: 'Achteraf betalen',
+    tekst:
+      'Wij doen het niet. Klarna en vergelijkbare diensten maken kopen zo makkelijk dat je er niet meer bij nadenkt, en dat is precies de bedoeling. Alles wat je zonder nadenken koopt, moest wel eerst gemaakt en bij je bezorgd worden.',
+  },
   // ------------------------------------------------------------- vervoer
   {
     segment: 'vervoer',
@@ -749,6 +794,13 @@ export const items = [
       'Eerlijk is eerlijk: ook ik vlieg heel soms. De laatste keer is nu drie jaar geleden. Vraag jezelf echt af of het met het vliegtuig moet. Binnen vijfhonderd kilometer rond Amsterdam kun je bijna overal met de trein komen.',
   },
 
+  {
+    segment: 'vervoer',
+    ring: 'investeer',
+    titel: 'Goede regenkleding voor op de fiets',
+    tekst:
+      'Een regenbroek en een jas die echt waterdicht is. Dan is een bui geen reden meer om toch de auto te pakken, ook niet in november.',
+  },
   // -------------------------------------------------------------- buiten
   {
     segment: 'buiten',
@@ -819,5 +871,46 @@ export const items = [
     titel: 'Deze site',
     tekst:
       'Het gaat er niet om dat jij één wc-blokje laat staan. Het gaat erom dat je laat zien dat het kan. Daarom staat dit hier.',
+  },
+  {
+    segment: 'buiten',
+    ring: 'investeer',
+    titel: 'Word lid van een natuurorganisatie',
+    tekst:
+      'Wij zijn lid van Zuid-Hollands Landschap en Natuurmonumenten. Van dat geld kopen en beheren ze natuurgebieden, en hoe meer leden ze hebben, hoe zwaarder hun stem weegt als er over die natuur besloten wordt. Elke provincie heeft een eigen landschapsorganisatie.',
+    links: [
+      { tekst: 'Zuid-Hollands Landschap', url: 'https://www.zuidhollandslandschap.nl/' },
+      { tekst: 'Natuurmonumenten', url: 'https://www.natuurmonumenten.nl/' },
+    ],
+  },
+  {
+    segment: 'buiten',
+    ring: 'laat',
+    titel: 'Vuurwerk',
+    tekst:
+      'Wij steken het niet af. Op oudejaarsnacht is de lucht vaak vuiler dan op welke andere dag van het jaar ook, dieren raken in paniek, en op 1 januari ligt de rommel overal: in de goot, in de bosjes, in de sloot.',
+  },
+  {
+    segment: 'buiten',
+    ring: 'laat',
+    titel: 'Ballonnen oplaten',
+    tekst:
+      'Ik vind ze overal: in de bosjes en op het strand. Mensen staan er niet bij stil dat zo\'n ballon ergens weer naar beneden komt, en dat is bijna altijd in de natuur of in zee.',
+    waarom:
+      'Een ballon die je loslaat is uit je zicht, en daarmee voelt hij ook weg. Maar hij komt kilometers verderop weer naar beneden, leeggelopen of geknapt, soms nog met het lint eraan. Vogels en zeedieren zien de resten aan voor voedsel of raken erin verstrikt. Steeds meer gemeenten verbieden het oplaten daarom.\n\nAls ik door de bosjes of over het strand loop, raap ik ze op, en het zijn er echt veel. Wil je bij een feest of een afscheid iets symbolisch doen, plant dan een boom of blaas bellen. Dat blijft niet in een duin liggen.',
+  },
+  {
+    segment: 'buiten',
+    ring: 'laat',
+    titel: 'Confetti en glitter',
+    tekst:
+      'Bijna altijd plastic, en dus rommel. Het waait de tuin, de goot en de sloot in en blijft daar liggen. Wil je toch iets strooien, neem dan confetti van papier of gedroogde bloemblaadjes.',
+  },
+  {
+    segment: 'buiten',
+    ring: 'laat',
+    titel: 'De wegwerpbarbecue',
+    tekst:
+      'Eén keer gebruiken en weggooien: een aluminium bakje, een lading houtskool en een verschroeide plek in het gras. In een droge zomer is het bovendien gevaarlijk. Wil je buiten barbecueën, neem dan een kleine barbecue mee die je jaren blijft gebruiken.',
   },
 ];

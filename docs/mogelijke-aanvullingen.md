@@ -103,3 +103,81 @@ Sterker wordt het als er ook keuzes in staan die jullie zélf lastig vinden of
 waar je van afziet. Denk aan: wel een auto hebben, af en toe toch vliegen, een
 huisdier, of CO2-compensatie die je bewust niet koopt omdat je er niet in
 gelooft. Dat maakt de rest van de radar geloofwaardiger dan welk cijfer ook.
+
+---
+
+## 10. Lege ringen (peildatum 2026-11-18, bij 96 items)
+
+Acht vakjes op de radar zijn nog leeg. Hieronder per vakje een paar dingen
+die bij jullie zouden kunnen passen. Zelfde regel als hierboven: alleen wat
+jullie echt doen gaat de radar op.
+
+Met ✓ gemarkeerd: staat sinds 2026-11-18 op de radar. Daarna zijn nog twee
+vakjes leeg: Geld · Investeer en Buiten je huishouden · Vervang.
+
+### Boodschappen & eten · Investeer één keer
+
+- ✓ Een oogstaandeel bij een zelfoogstboerderij of Herenboeren: één keer
+  instappen, daarna wekelijks je groente halen bij een boer die je kent
+- Weckpotten en één zaterdag leren inmaken of fermenteren, zodat de oogst van
+  de zomer de winter haalt
+- ✓ Een goede drinkfles en koffiebeker die altijd mee gaan
+
+### Energie & warmte · Afscheid
+
+- De gasaansluiting opzeggen, als jullie met warmtepomp en inductie helemaal
+  van het gas af zijn
+- Een tweede koelkast of vriezer in de schuur of garage
+- Een terrasverwarmer
+- ✓ Gloeilampen en halogeen
+- Let op: een houtkachel of open haard zou hier ook passen, maar dat botst met
+  het item over aanmaakblokjes. Alleen opnemen als het klopt
+
+### Geld · Investeer één keer
+
+- Lid worden van een energiecoöperatie, bijvoorbeeld via een postcoderoos of
+  een lokaal wind- of zonnepark
+- Een periodieke gift aan een natuurorganisatie: één keer voor minstens vijf
+  jaar vastleggen, dan is hij zonder drempel aftrekbaar
+- Verduurzaming financieren via de hypotheek of het Nationaal Warmtefonds
+- Een goed doel in je testament
+
+### Geld · Afscheid
+
+- ✓ Achteraf betalen, zoals Klarna. Maakt kopen te makkelijk
+- ✓ Black Friday en andere kortingsdagen
+- Crypto die op mining draait, zoals bitcoin, vanwege het stroomverbruik
+- ✓ Spaarprogramma's voor vliegmiles
+
+### Vervoer & reizen · Investeer één keer
+
+- Een slimme laadpaal die laadt als de zon op het dak staat
+- Een e-bike of speed pedelec, waarmee 8 tot 13 kilometer naar je werk geen
+  probleem meer is
+- ✓ Goede regenkleding en fietstassen, zodat de fiets ook in november de
+  standaard blijft
+- Een NS-dalabonnement
+
+### Buiten je huishouden · Vervang
+
+- Bij de winkel om de hoek kopen in plaats van bij bol of Amazon
+- Een huurkerstboom in een pot, die na de feestdagen weer terug de grond in
+  gaat
+- Ecosia als zoekmachine. Eerlijk erbij zeggen dat het effect klein is
+- Op het werk vragen om standaard vegetarisch bij de lunch of borrel.
+  Algemeen houden, niet te koppelen aan een werkgever
+
+### Buiten je huishouden · Investeer één keer
+
+- Een geveltuin aanleggen of een boomspiegel adopteren
+- Een minibieb voor de deur
+- ✓ Lid worden van een natuurorganisatie, zoals Natuurmonumenten of de
+  Vogelbescherming
+- Inspreken of bezwaar maken bij de gemeente als er gekapt of verhard wordt
+
+### Buiten je huishouden · Afscheid
+
+- ✓ Vuurwerk
+- ✓ Ballonnen oplaten
+- ✓ Confetti en glitter, dat is gewoon microplastic
+- ✓ De wegwerpbarbecue in het park

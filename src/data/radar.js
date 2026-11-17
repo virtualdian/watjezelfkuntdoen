@@ -63,7 +63,7 @@ export const items = [
     tekst:
       'De bio-industrie is verrot en de uitstoot is enorm. Je hoeft niet van de ene op de andere dag vegetariër te worden. Begin met minder.',
     waarom:
-      'Milieu Centraal rekent het door: van zes keer per week vlees naar één keer scheelt ongeveer 330 kg CO₂ per persoon per jaar. Dat is minder dan het isoleren van een slecht geïsoleerd huis oplevert, wat mij oprecht verbaasde toen ik het opzocht. Maar het is wel de knop waar je niets voor hoeft aan te schaffen en waar je niemands toestemming voor nodig hebt, en dat maakt hem in de praktijk vaak de eerste die je omzet.\n\nDit is tegelijk de meest beladen. Daarom geen preek en geen percentage dat ik niet hard kan maken: voor vlees is land, veevoer, water en mest nodig, en die keten is vele malen zwaarder dan die van wat direct uit de grond komt. Een dier eet nu eenmaal jarenlang plantaardig voedsel voordat het zelf voedsel wordt, en het grootste deel van die energie gaat onderweg verloren.\n\nWat ik zelf het prettigst vind aan dit item: het is de enige op deze radar waar je geen aankoop, geen klus en geen abonnement voor nodig hebt. Je maakt de keuze gewoon opnieuw bij de volgende maaltijd. Eén dag per week minder is al iets, en niemand ziet het als je het een keer niet volhoudt.',
+      'Milieu Centraal rekent het door: van zes keer per week vlees naar één keer scheelt ongeveer 330 kg CO₂ per persoon per jaar. Dat is minder dan het isoleren van een slecht geïsoleerd huis oplevert, wat mij oprecht verbaasde toen ik het opzocht. Maar het is wel de knop waar je niets voor hoeft aan te schaffen en waar je niemands toestemming voor nodig hebt, en dat maakt hem in de praktijk vaak de eerste die je omzet.\n\nDit is tegelijk de meest beladen. Daarom geen preek en geen percentage dat ik niet hard kan maken: voor vlees is land, veevoer, water en mest nodig, en die keten is vele malen zwaarder dan die van wat direct uit de grond komt. Een dier eet nu eenmaal jarenlang plantaardig voedsel voordat het zelf voedsel wordt, en het grootste deel van die energie gaat onderweg verloren.\n\nJe maakt de keuze gewoon opnieuw bij elke maaltijd. Eén dag per week minder is al iets, en niemand ziet het als je het een keer niet volhoudt.',
   },
   {
     segment: 'eten',
@@ -100,7 +100,7 @@ export const items = [
     tekst:
       'Bij mij is alles in de koelkast biologisch. Niet omdat ik er persoonlijk gezonder van word, maar omdat vraag het aanbod verandert.',
     waarom:
-      'Dit is het duidelijkste voorbeeld van waarom "wat ik doe maakt toch niets uit" niet klopt. Een boer die overweegt om te schakelen kijkt naar één ding: is er genoeg afzet? Elke kar met biologische boodschappen is een stem in die afweging. Je verandert er de wereld niet mee, maar je verandert wel wat er volgend seizoen gezaaid wordt. Dat is precies het soort effect dat je zelf nooit terugziet, en dat wel bestaat.',
+      'Een boer die overweegt om te schakelen kijkt naar één ding: is er genoeg afzet? Elke kar met biologische boodschappen is een stem in die afweging. Wat er volgend seizoen gezaaid wordt, hangt daar mede van af. Dat zie je zelf nooit terug, en het gebeurt toch.',
   },
   {
     segment: 'eten',
@@ -193,7 +193,7 @@ export const items = [
     tekst:
       'Riedel, de maker van Appelsientje, Dubbelfriss en Coolbest, voegt een vleugje melk toe aan het sap. Daarmee telt het als zuiveldrank, en zuiveldranken zijn vrijgesteld van de belasting op frisdrank. Ik zie de flesjes bovendien massaal terug als ik mijn buurt schoonmaak.',
     waarom:
-      'Dit is het duidelijkste voorbeeld dat ik ken van een bedrijf dat de regel volgt en de bedoeling ervan compleet negeert. Nederland heft belasting op frisdrank om suikerhoudende dranken duurder te maken. Zuiveldranken zijn daarvan uitgezonderd. Riedel voegt 0,02% melkvet toe, in de vorm van melkpermeaat, een restproduct van bijvoorbeeld kwark. Genoeg om als zuiveldrank te gelden, veel te weinig om er iets van te proeven. De staatssecretaris heeft bevestigd dat het mag onder de huidige wet en heeft aangekondigd naar die uitzondering te gaan kijken.\n\nEn er zit een tweede staart aan. Precies dezelfde uitzondering bestaat bij statiegeld: plastic flessen met zuiveldrank vallen buiten de statiegeldregeling. Dat is geen theoretisch probleem. Uit de evaluatie van de statiegeldregeling blijkt dat flessen zonder statiegeld ongeveer twintig procent van alle plastic flessen zijn, en dat ze juist daarom relatief vaak in het zwerfafval terechtkomen. Dat is precies wat ik zie als ik met een grijper door de buurt loop. Vanaf 2029 zouden sommige zuiveldranken alsnog onder statiegeld moeten vallen.',
+      'Riedel volgt hier de regel en negeert de bedoeling ervan. Nederland heft belasting op frisdrank om suikerhoudende dranken duurder te maken. Zuiveldranken zijn daarvan uitgezonderd. Riedel voegt 0,02% melkvet toe, in de vorm van melkpermeaat, een restproduct van bijvoorbeeld kwark. Genoeg om als zuiveldrank te gelden, veel te weinig om er iets van te proeven. De staatssecretaris heeft bevestigd dat het mag onder de huidige wet en heeft aangekondigd naar die uitzondering te gaan kijken.\n\nEn er zit een tweede staart aan. Dezelfde uitzondering bestaat bij statiegeld: plastic flessen met zuiveldrank vallen buiten de statiegeldregeling. Dat is geen theoretisch probleem. Uit de evaluatie van de statiegeldregeling blijkt dat flessen zonder statiegeld ongeveer twintig procent van alle plastic flessen zijn, en dat ze juist daarom relatief vaak in het zwerfafval terechtkomen. Dat zie ik ook als ik met een grijper door de buurt loop. Vanaf 2029 zouden sommige zuiveldranken alsnog onder statiegeld moeten vallen.',
     links: [
       {
         tekst: 'Radar over het melkvet in Dubbelfriss en Appelsientje',
@@ -251,7 +251,7 @@ export const items = [
     tekst:
       'Eierdozen, pluis uit de droger of geschaafd hout, en oud kaarsvet. Drie dingen die je normaal weggooit, en samen zijn ze één bruikbaar nieuw product. Vet smelten, in de eierdoos gieten met het pluis erin, laten stollen, in stukjes knippen.',
     waarom:
-      'Dit is het kleinste item op de radar en tegelijk mijn favoriete. Niet omdat aanmaakblokjes de wereld redden, maar omdat het laat zien hoe restproducten werken: alle drie deze dingen zijn afval, tot je ze bij elkaar legt. De eierdoos is de vorm en het brandt, het pluis of het houtschaafsel vat vlam, en het kaarsvet zorgt dat het lang genoeg blijft branden om het hout mee te krijgen.\n\nWie dat één keer zelf doet, gaat daarna anders naar zijn afvalbak kijken. Dat is het echte effect: niet de blokjes, maar dat je begint te zien welke dingen bij elkaar horen. Praktisch: smelt het vet au bain-marie en niet rechtstreeks in de pan, en gebruik pluis van katoenen was, niet van polyester.',
+      'Mijn favoriete item, en meteen het kleinste. Het laat zien hoe restproducten werken: alle drie deze dingen zijn afval, tot je ze bij elkaar legt. De eierdoos is de vorm en het brandt, het pluis of het houtschaafsel vat vlam, en het kaarsvet zorgt dat het lang genoeg blijft branden om het hout mee te krijgen.\n\nWie dat één keer zelf doet, gaat daarna anders naar zijn afvalbak kijken. Je begint te zien welke dingen bij elkaar horen, en daar gaat het eigenlijk om. Praktisch: smelt het vet au bain-marie en niet rechtstreeks in de pan, en gebruik pluis van katoenen was, niet van polyester.',
   },
   {
     segment: 'huishouden',
@@ -484,7 +484,7 @@ export const items = [
     tekst:
       'Ik bestel bij Sprinklr. Koop je bespoten planten, dan nemen bijen en hommels die pesticiden gewoon mee terug naar hun nest.',
     waarom:
-      'Dit is het item waarvan de meeste mensen niet weten dat het bestaat. Je koopt een plant speciaal om iets te doen voor de bijen, en levert vervolgens gif af bij het nest. De plant is dan letterlijk een val: hij trekt precies de beestjes aan die je wilde helpen.\n\nHet venijnige zit hem in bestrijdingsmiddelen die door de hele plant worden opgenomen in plaats van erop te blijven liggen. Afspoelen helpt dan niet, en de stof zit ook in de nectar en het stuifmeel. Bij een biologische kwekerij speelt dat niet. Let bij het kopen op het SKAL-keurmerk, want "milieuvriendelijk" op een kaartje zegt op zichzelf niets.',
+      'Je koopt een plant speciaal om iets te doen voor de bijen, en levert vervolgens gif af bij het nest. De plant is dan letterlijk een val: hij trekt precies de beestjes aan die je wilde helpen.\n\nHet venijnige zit hem in bestrijdingsmiddelen die door de hele plant worden opgenomen in plaats van erop te blijven liggen. Afspoelen helpt dan niet, en de stof zit ook in de nectar en het stuifmeel. Bij een biologische kwekerij speelt dat niet. Let bij het kopen op het SKAL-keurmerk, want "milieuvriendelijk" op een kaartje zegt op zichzelf niets.',
     links: [{ tekst: 'Sprinklr', url: 'https://sprinklr.co/' }],
   },
   {
@@ -580,7 +580,7 @@ export const items = [
     ring: 'vandaag',
     titel: 'Vraag herinneringen in plaats van cadeaus',
     tekst:
-      'Met verjaardagen en feestdagen vraag ik geen spullen meer, maar iets om samen te doen. Dat is het enige cadeau waar je een jaar later nog iets aan hebt.',
+      'Met verjaardagen en feestdagen vraag ik geen spullen meer, maar iets om samen te doen. Daar heb je een jaar later nog iets aan.',
     waarom:
       'Feestdagen en verjaardagen zijn de momenten waarop de meeste onnodige spullen een huis binnenkomen. Niet omdat iemand ze nodig heeft, maar omdat er iets gegeven moest worden. Een groot deel daarvan staat binnen een jaar in de kast of op Marktplaats.\n\nHet ongemakkelijke is dat je het moet uitspreken, want anders koopt iedereen gewoon door. Zeg het gerust ruim van tevoren. In mijn ervaring zijn mensen vooral opgelucht: het scheelt hun ook een middag dwalen door een winkelstraat.',
   },
@@ -591,7 +591,7 @@ export const items = [
     tekst:
       'Bij elektronica zit de impact vooral in de productie, niet in het stroomverbruik. Langer gebruiken is dus verreweg het belangrijkst.',
     waarom:
-      'Een telefoon kost het grootste deel van zijn voetafdruk voordat jij hem voor het eerst aanzet: mijnbouw, chips, transport. Wat hij daarna aan stroom gebruikt is klein in vergelijking. Elk jaar dat je hem langer gebruikt, verdeel je diezelfde productiekosten over meer tijd. Twee jaar langer doen met hetzelfde toestel is daarmee effectiever dan wat je aan het gebruik ervan kunt optimaliseren.',
+      'Een telefoon kost het grootste deel van zijn voetafdruk voordat jij hem voor het eerst aanzet: mijnbouw, chips, transport. Wat hij daarna aan stroom gebruikt is klein in vergelijking. Elk jaar dat je hem langer gebruikt, verdeel je diezelfde productiekosten over meer tijd. Twee jaar langer doen met hetzelfde toestel is daarmee effectiever dan zuiniger omgaan met het gebruik ervan.',
   },
   {
     segment: 'spullen',
@@ -667,7 +667,7 @@ export const items = [
     tekst:
       'Je spaargeld staat niet stil op een plank. Het wordt belegd, en waarin dat gebeurt verschilt enorm per bank. De Eerlijke Bankwijzer rekent het voor je uit.',
     waarom:
-      'De Eerlijke Bankwijzer beoordeelt Nederlandse banken op onder andere mensenrechten, wapens, olie en gas, biodiversiteit en dierenwelzijn. In de beoordeling van maart 2026 staat Triodos bovenaan met een 9,4, gevolgd door ASN met een 8,6. ING en ABN AMRO blijven op een 6 staan. Rabobank zakte het hardst, van een 7 naar een 5, en staat daarmee onderaan.\n\nWat me daarbij het meest opvalt: het gemiddelde van alle banken samen ging omlaag, van afgerond een 7 in 2023 naar een 6 nu. Banken worden dus niet vanzelf beter, ook niet nu iedereen het over verduurzaming heeft. Dat is precies waarom het uitmaakt waar jij je geld neerzet, want dat is het enige signaal dat een bank echt voelt.',
+      'De Eerlijke Bankwijzer beoordeelt Nederlandse banken op onder andere mensenrechten, wapens, olie en gas, biodiversiteit en dierenwelzijn. In de beoordeling van maart 2026 staat Triodos bovenaan met een 9,4, gevolgd door ASN met een 8,6. ING en ABN AMRO blijven op een 6 staan. Rabobank zakte het hardst, van een 7 naar een 5, en staat daarmee onderaan.\n\nWat me daarbij het meest opvalt: het gemiddelde van alle banken samen ging omlaag, van afgerond een 7 in 2023 naar een 6 nu. Banken worden dus niet vanzelf beter, ook niet nu iedereen het over verduurzaming heeft. Daarom maakt het uit waar jij je geld neerzet: dat is een signaal dat een bank direct merkt.',
     links: [
       {
         tekst: 'Eerlijke Bankwijzer: hoe scoort jouw bank?',
@@ -680,9 +680,9 @@ export const items = [
     ring: 'vandaag',
     titel: 'Koop minder, en win tijd',
     tekst:
-      'Minder kopen betekent meer sparen en sneller aflossen, en dat betekent uiteindelijk vrije tijd. Tijd is het meest schaarse goed dat je hebt. Dit is geen offer, dit is winst.',
+      'Minder kopen betekent meer sparen en sneller aflossen, en dat betekent uiteindelijk vrije tijd.',
     waarom:
-      'Dit is wat mij betreft de kern van deze hele radar. Bijna alles hierboven wordt gebracht als iets wat je inlevert: minder vlees, minder vliegen, minder kopen. Maar de rekening klopt andersom. Elke aankoop die je niet doet, is geld dat je niet hoeft te verdienen, en dus tijd die je niet hoeft te werken. De meeste mensen ruilen hun uren in voor spullen die ze binnen een jaar niet meer zien staan. Dat is de duurste ruil die er bestaat.',
+      'Bijna alles op deze radar wordt gebracht als iets wat je inlevert: minder vlees, minder vliegen, minder kopen. Maar de rekening klopt andersom. Elke aankoop die je niet doet, is geld dat je niet hoeft te verdienen, en dus tijd die je niet hoeft te werken. De meeste mensen ruilen hun uren in voor spullen die ze binnen een jaar niet meer zien staan. Dat is een dure ruil.',
     links: [{ tekst: 'Intentioneel leven, Ernst-Jan Pfauth', url: 'https://pfauth.com/intentioneel-leven/' }],
   },
   {
@@ -749,7 +749,7 @@ export const items = [
     ring: 'laat',
     titel: 'Achteraf betalen',
     tekst:
-      'Wij doen het niet. Klarna en vergelijkbare diensten maken kopen zo makkelijk dat je er niet meer bij nadenkt, en dat is precies de bedoeling. Alles wat je zonder nadenken koopt, moest wel eerst gemaakt en bij je bezorgd worden.',
+      'Wij doen het niet. Klarna en vergelijkbare diensten maken kopen zo makkelijk dat je er niet meer bij nadenkt, en daar zijn ze ook voor gemaakt. Alles wat je zonder nadenken koopt, moest wel eerst gemaakt en bij je bezorgd worden.',
   },
   // ------------------------------------------------------------- vervoer
   {
@@ -809,14 +809,14 @@ export const items = [
     tekst:
       'De gemiddelde Nederlander zit ’s avonds naar een praatprogramma te kijken waar hij alleen maar ongelukkiger van wordt. Zet het uit en ga een avond iets doen waar iemand anders wat aan heeft. Je slaapt er beter van.',
     waarom:
-      'Dit is het enige item op de radar dat niet gaat over minder verbruiken, maar over meer opleveren. Alle andere items maken je voetafdruk kleiner; deze maakt iets groter. En het werkt bovendien tegen precies het gevoel waar deze site over gaat: machteloosheid verdwijnt niet door nog een documentaire te kijken, maar door je handen vuil te maken tussen mensen die hetzelfde doen.',
+      'De meeste items op deze radar maken je voetafdruk kleiner. Vrijwilligerswerk maakt iets groter: een voedselbos, een opgeruimde buurt, een avond waar iemand anders iets aan heeft. Het helpt ook tegen het gevoel waar deze site over gaat. Van machteloosheid kom je niet af met nog een documentaire, wel door je handen vuil te maken tussen mensen die hetzelfde doen.',
   },
   {
     segment: 'buiten',
     ring: 'vandaag',
     titel: 'Ga helpen in een voedselbos',
     tekst:
-      'Gisteravond stond ik er nog met gieters. Vrijwilligerswerk is het enige wat direct meer oplevert dan je zelf verbruikt.',
+      'Gisteravond stond ik er nog met gieters. Vrijwilligerswerk levert direct meer op dan je zelf verbruikt.',
   },
   {
     segment: 'buiten',
@@ -847,16 +847,16 @@ export const items = [
     tekst:
       'Begin erover bij de koffie, op een verjaardag, aan tafel. Niet om iemand te overtuigen, gewoon om te vertellen wat je zelf doet.',
     waarom:
-      'Dit is misschien wel het belangrijkste item op deze hele radar, en het kost je helemaal niets. Zolang niemand erover begint, denkt iedereen dat hij de enige is die er wakker van ligt. Zodra je het uitspreekt blijkt steeds weer dat de halve tafel zich net zo goed zorgen maakt, en dat ze het alleen nooit hardop zeggen.\n\nEn het loopt twee kanten op. Ik heb zelf de helft van wat op deze radar staat van anderen geleerd, gewoon doordat iemand terloops vertelde wat hij deed. Als jij vertelt dat je je bank hebt verruild, weet de volgende dat het kan. Dat is de enige manier waarop dit soort keuzes zich verspreidt.',
+      'Dit is misschien wel het belangrijkste item op deze hele radar, en het kost je helemaal niets. Zolang niemand erover begint, denkt iedereen dat hij de enige is die er wakker van ligt. Zodra je het uitspreekt blijkt steeds weer dat de halve tafel zich net zo goed zorgen maakt, en dat ze het alleen nooit hardop zeggen.\n\nEn het loopt twee kanten op. Ik heb zelf de helft van wat op deze radar staat van anderen geleerd, gewoon doordat iemand terloops vertelde wat hij deed. Als jij vertelt dat je je bank hebt verruild, weet de volgende dat het kan. Zo verspreiden dit soort keuzes zich.',
   },
   {
     segment: 'buiten',
     ring: 'vandaag',
     titel: 'Stem op een partij die de klimaatcrisis serieus neemt',
     tekst:
-      'Je stem laten horen is een van de belangrijkste dingen die je kunt doen. Kies een partij die de klimaatcrisis serieus neemt, en sla de gemeente, de provincie en het waterschap niet over.',
+      'Laat je stem horen. Kies een partij die de klimaatcrisis serieus neemt, en sla de gemeente, de provincie en het waterschap niet over.',
     waarom:
-      'Alles op deze radar doe je binnen regels die iemand anders heeft gemaakt. Of er subsidie is voor isolatie, of de trein betaalbaar blijft, of er een windpark mag komen en hoeveel stikstof er de natuur in gaat: dat wordt in een raadszaal, een Statenzaal of in Den Haag besloten.\n\nDat ene hokje voelt klein, en dat is precies hetzelfde gevoel als bij alles op deze site. In je eentje zie je het nooit terug, bij elkaar opgeteld bepaalt het de koers. De waterschapsverkiezingen worden het makkelijkst overgeslagen, terwijl het waterschap gaat over je dijken, je slootwater en de natuur eromheen.',
+      'Alles op deze radar doe je binnen regels die iemand anders heeft gemaakt. Of er subsidie is voor isolatie, of de trein betaalbaar blijft, of er een windpark mag komen en hoeveel stikstof er de natuur in gaat: dat wordt in een raadszaal, een Statenzaal of in Den Haag besloten.\n\nDat ene hokje voelt klein, net als alles op deze site. In je eentje zie je het nooit terug, bij elkaar opgeteld bepaalt het de koers. De waterschapsverkiezingen worden het makkelijkst overgeslagen, terwijl het waterschap gaat over je dijken, je slootwater en de natuur eromheen.',
   },
   {
     segment: 'buiten',
@@ -911,6 +911,6 @@ export const items = [
     ring: 'laat',
     titel: 'De wegwerpbarbecue',
     tekst:
-      'Eén keer gebruiken en weggooien: een aluminium bakje, een lading houtskool en een verschroeide plek in het gras. In een droge zomer is het bovendien gevaarlijk. Wil je buiten barbecueën, neem dan een kleine barbecue mee die je jaren blijft gebruiken.',
+      'Eén keer gebruiken en weggooien: een aluminium bakje, een lading houtskool en een verschroeide plek in het gras. In een droge zomer is het ook nog gevaarlijk. Wil je buiten barbecueën, neem dan een kleine barbecue mee die je jaren blijft gebruiken.',
   },
 ];

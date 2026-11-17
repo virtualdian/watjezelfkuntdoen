@@ -349,6 +349,15 @@ export const items = [
   },
   {
     segment: 'energie',
+    ring: 'vandaag',
+    titel: 'Gebruik stroom als het waait of de zon schijnt',
+    tekst:
+      'Wij laden de auto op en draaien de vaatwasser als er stroom genoeg is: overdag, of als het hard waait. Niet eens om het geld, maar om het net te ontlasten.',
+    waarom:
+      'Het stroomnet moet op elk moment precies leveren wat wij met z\'n allen afnemen. Op een zonnige of winderige dag is er zoveel duurzame stroom dat zonneparken soms worden afgeschakeld en windmolens stil worden gezet, omdat niemand hem afneemt. ’s Avonds en ’s nachts, als de zon weg is en het windstil is, vullen gas- en kolencentrales het gat. Elke vaatwasser die je van de avond naar het middaguur schuift, draait dan eerder op zon en wind dan op een centrale.\n\nPraktisch is het makkelijker dan het klinkt. De meeste vaatwassers en wasmachines hebben een uitgestelde start: zet hem ’s ochtends klaar, dan begint hij rond het middaguur. Een elektrische auto kun je vaak in de app laten wachten tot de zon erop staat. En kijk gewoon naar buiten. Waait het hard of is het stralend weer, dan is dat het moment.',
+  },
+  {
+    segment: 'energie',
     ring: 'vervang',
     titel: 'Kruip onder een wollen kleed',
     tekst:
@@ -604,6 +613,15 @@ export const items = [
   },
   {
     segment: 'spullen',
+    ring: 'investeer',
+    titel: 'Goede pannen van RVS',
+    tekst:
+      'Eén keer goed kopen en dan klaar. Een stevige RVS-pan gaat een leven lang mee, dus er hoeft nooit meer een nieuwe voor je gemaakt te worden.',
+    waarom:
+      'Een pan met antiaanbaklaag houdt het een paar jaar vol. Dan is de laag versleten, gaat alles alsnog vastzitten en kan de hele pan weg, want zo\'n laag vervang je niet. Aan een RVS-pan zit niets wat slijt. Je kunt hem schuren, in de vaatwasser zetten en er met een metalen spatel in roeren, en over twintig jaar doet hij het nog net zo goed.\n\nLet bij het kopen op twee dingen. Kijk of de bodem geschikt is voor inductie, en kies een dikke bodem, want daarin verdeelt de warmte zich beter en brandt er minder aan. Het aanbakken waar mensen bang voor zijn, voorkom je grotendeels door de pan eerst goed heet te laten worden voordat de olie erin gaat.',
+  },
+  {
+    segment: 'spullen',
     ring: 'laat',
     titel: 'Temu, AliExpress en dat soort goedkope troepsites',
     tekst:
@@ -778,6 +796,15 @@ export const items = [
       'Begin erover bij de koffie, op een verjaardag, aan tafel. Niet om iemand te overtuigen, gewoon om te vertellen wat je zelf doet.',
     waarom:
       'Dit is misschien wel het belangrijkste item op deze hele radar, en het kost je helemaal niets. Zolang niemand erover begint, denkt iedereen dat hij de enige is die er wakker van ligt. Zodra je het uitspreekt blijkt steeds weer dat de halve tafel zich net zo goed zorgen maakt, en dat ze het alleen nooit hardop zeggen.\n\nEn het loopt twee kanten op. Ik heb zelf de helft van wat op deze radar staat van anderen geleerd, gewoon doordat iemand terloops vertelde wat hij deed. Als jij vertelt dat je je bank hebt verruild, weet de volgende dat het kan. Dat is de enige manier waarop dit soort keuzes zich verspreidt.',
+  },
+  {
+    segment: 'buiten',
+    ring: 'vandaag',
+    titel: 'Stem op een partij die de klimaatcrisis serieus neemt',
+    tekst:
+      'Je stem laten horen is een van de belangrijkste dingen die je kunt doen. Kies een partij die de klimaatcrisis serieus neemt, en sla de gemeente, de provincie en het waterschap niet over.',
+    waarom:
+      'Alles op deze radar doe je binnen regels die iemand anders heeft gemaakt. Of er subsidie is voor isolatie, of de trein betaalbaar blijft, of er een windpark mag komen en hoeveel stikstof er de natuur in gaat: dat wordt in een raadszaal, een Statenzaal of in Den Haag besloten.\n\nDat ene hokje voelt klein, en dat is precies hetzelfde gevoel als bij alles op deze site. In je eentje zie je het nooit terug, bij elkaar opgeteld bepaalt het de koers. De waterschapsverkiezingen worden het makkelijkst overgeslagen, terwijl het waterschap gaat over je dijken, je slootwater en de natuur eromheen.',
   },
   {
     segment: 'buiten',
